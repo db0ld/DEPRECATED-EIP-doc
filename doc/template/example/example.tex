@@ -1,0 +1,205 @@
+\documentclass{life-fr}
+
+\begin{document}
+
+\title{Démo LaTeX}
+\subtitle{DocumentClass Life v2}
+\member{Barbara Lepage}{db0company@gmail.com}
+
+\summary
+{
+  Ce document montre les différentes fonctionnalités de la
+  documentclass EIP.
+}
+
+\maketitle
+
+\tableofcontents
+
+ \chapter{Exemple de mise en forme}
+
+   \section{Lien}
+     Ceci est un lien :
+     \url{http://google.com}\\
+
+     Vous conaissez Google ?
+
+   \section{Mise en forme du texte}
+     \textbf{texte en gras}\\
+     \textit{texte en italique}\\
+     \underline{texte souligne}\\
+     texte normal
+
+   \section{Insertion d'une image}
+     \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=15cm]{../../../logo/lveuj_cuteface.png}
+      \end{center}
+    \end{figure} 
+
+ \chapter{D'autres exemples}
+ 
+   \section{De jolies boîtes}
+     Pour mettre en avant du texte :
+     \warn {Vous devez faire attention à ce message.}
+     \info {Ce message apporte une information.}
+     \hint {Ceci est un conseil à suivre.}
+     \yes{C'est terminé, bouclé, validé !}
+     \ongoing{C'est en cours...}
+     \nobox{Ce n'est pas fait, c'est faux, c'est une négation.}
+     \newpage 
+
+   \section{Une liste}
+     Et pour finir, une petite liste :
+     \begin{itemize}
+      \item élement
+      \item autre élement
+      \item Pourquoi pas une sous-liste ?
+        \begin{itemize}
+          \item hello
+          \item world
+        \end{itemize}
+      \item Et encore un élément !
+     \end{itemize}
+
+\chapter{Extrait d'un cours réel}
+
+    Vous devez utiliser l'interprete pour resoudre les exercices de ce TP. Je
+  vous rappel que la commande shell pour lancer l'interprete OCaml est
+  \texttt{"ocaml"}.\\
+\\  Exemple :
+
+  \begin{lstlisting}
+    >ocaml
+             Objective Caml version 3.10.2
+
+    #
+  \end{lstlisting}
+
+  \hint
+  {
+    Vous pouvez utiliser la commande rlwrap avec en parametre l'interprete ocaml
+    pour beneficier d'une edition de ligne confortable.
+  }
+
+    La version d'ocaml que vous utilisez peut varier de celle de l'exemple, mais
+  cela n'influra pas sur le contenu de ce module.\\
+  Pour quitter l'interprete, vous pouvez taper la directive \texttt{"\#quit"}
+  (avec le \texttt{\#}) ou faire un \texttt{<ctrl> + d}.\\
+
+  Si vous voulez conserver le code que vous allez taper dans ce TP, vous pouvez
+  l'ecrire dans un fichier et le charger dans l'interprete grace a la directive
+  \texttt{"\#use "fichier.ml""} (avec le \texttt{\#} et les doubles quotes autour
+  du nom du fichier de sources). Cette directive va lire, compiler et evaluer
+  votre fichier directement dans l'interprete.\\
+
+  \hint
+  {
+    Le symbole ";;" sert a marquer la fin d'une commande dans l'interprete
+    ocaml. Il est donc inutile de le mettre a la fin de vos expressions dans
+    votre fichier de sources.
+  }
+
+  Exemple :
+
+  \begin{lstlisting}
+    >cat exemple.ml
+    let greetings = "Bonjour les tech2 !" (* Notez l'absence de ";;" *)
+    >ocaml
+            Objective Caml version 3.11.1
+
+    # #use "exemple.ml";;
+    val greetings : string = "Bonjour les tech2 !"
+    # greetings;;
+    - : string = "Bonjour les tech2 !"
+    #
+  \end{lstlisting}
+
+
+  \section{Exercice 1}
+
+  \begin{itemize}
+    \item Creez un fichiez nomme \texttt{"exercice\_1.ml"}
+    \item Ecrivez dans ce fichier \texttt{"let exercice\_1 = "Reussi !""} suivi
+      d'un retour a la ligne
+    \item Sauvegardez, et dans votre shell, lancez l'interprete ocaml
+    \item A l'invite de l'interprete, utilisez la directive \texttt{"\#use"}
+      pour evaluer le fichier \texttt{"exercice\_1.ml"}
+  \end{itemize}
+
+\chapter{Expressions et types}
+
+    Pour vous aider, je vous encourage tres fortement a consulter la
+  documentation officielle du langage a l'adresse
+  \url{http://caml.inria.fr/pub/docs/manual-ocaml/index.html} et la
+  documentation du module Pervasives. Disponible a l'adresse
+  \url{http://caml.inria.fr/pub/docs/manual-ocaml/libref/Pervasives.html}, ce
+  module de la bibliotheque standard est ouvert par defaut dans tous vos
+  programmes.
+
+
+  \section{Exercice 2}
+
+    Parcourez la documentation du module Pervasives a l'adresse
+  \url{http://caml.inria.fr/pub/docs/manual-ocaml/libref/Pervasives.html},
+  principalement la section "comparaisons".
+
+  \section{Exercice 3}
+
+    Tentez de predire le type et la valeur de chacune des expressions suivantes,
+  puis verifiez si vous avez raison a l'aide de l'interprete. Il est tout a fait
+  possible que certaines de ces expressions s'evaluent en erreurs...
+
+  \begin{itemize}
+    \item let a = 42;;
+    \item a;;
+    \item let b = "suspens...";;
+    \item let c = ();;
+    \item let d = 42 + 0;;
+    \item let e = 42.0 +. 0;;
+    \item let f = 30 and g = 12;;
+    \item let h = f + g;;
+    \item let i = let j = 50 and k = 8 in j - k;;
+    \item let l = 42 in let m = l - 42 in l + m;;
+    \item let n = 42 and o = n - 42 in n + o;;
+  \end{itemize}
+
+
+  \section{Exercice 4}
+
+    Tentez de predire le type et la valeur de chacune des expressions suivantes,
+  puis verifiez si vous avez raison a l'aide de l'interprete. Il est tout a fait
+  possible que certaines de ces expressions s'evaluent en erreurs...
+
+  \begin{itemize}
+    \item let fonction\_p = fun a b -> a + b;;
+    \item let fonction\_q a b = a + b;;
+    \item fonction\_q 21 21;;
+    \item fonction\_q;;
+    \item let fonction\_r () = 42;;
+    \item let fonction\_s a = 42;;
+    \item let fonction\_t a = a;;
+    \item let fonction\_u a b = a b;;
+    \item let fonction\_v a b c = a b c;;
+    \item let fonction\_w a b c = a (b c);;
+    \item let fonction\_x () = let a = 42 in let b = 42 in a - b + 42;;
+    \item let y = "a" in let fonction\_z a b = b $\wedge$ y in fonction\_z;;
+    \item fonction\_z;;
+  \end{itemize}
+
+  \section{Exercice 5}
+
+    Tentez de predire le type et la valeur de chacune des expressions suivantes,
+  puis verifiez si vous avez raison a l'aide de l'interprete. Il est tout a fait
+  possible que certaines de ces expressions s'evaluent en erreurs...
+
+  \begin{itemize}
+    \item let a = 42 in if a > 0 then true else false;;
+    \item let str = "ocaml" in if str <> "" then print\_endline str;;
+    \item if 42 = 24 then ( * ) else ( + );;
+    \item let \_ = match 42 with 0 -> "zero" | n -> "42";;
+    \item let rec f x = if x > 0 then (g (x - 1)) else 1 and g x = if x > 0 then
+      (f (x - 1)) else 0;;
+  \end{itemize}
+
+\end{document}
