@@ -1,0 +1,6 @@
+
+La vie est un jeu est une application multi-plateforme permettant d’ajouter à
+sa vie quotidienne un module d’"achievement" ! Les utilisateurs, selon leur
+profil et leur mode de vie, auront accès à une série de défis, qu’ils pourront
+valider sous la supervision de leurs amis.
+
