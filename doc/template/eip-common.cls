@@ -215,28 +215,27 @@
   \begin{titlepage}
 
     \begin{center}
-	\begin{figure}[t]
-	\begin{minipage}[m]{0.5\linewidth}
+      \begin{figure}[t]
+        \begin{minipage}[m]{0.5\linewidth}
           \hspace{4cm}
-	\includegraphics[width=8cm]{\@schoollogo}
-	\end{minipage}
-	\end{figure}
+          \includegraphics[width=8cm]{\@schoollogo}
+          \end{minipage}
+        \end{figure}
     \end{center}
 
     \begin{center}
-	\begin{figure}[t]
-	\begin{minipage}[m]{0.5\linewidth}
-	\includegraphics[width=16cm]{\@lifelogo}
-	\end{minipage}
-	\end{figure}
+      \begin{figure}[t]
+        \begin{minipage}[m]{0.5\linewidth}
+          \includegraphics[width=16cm]{\@lifelogo}
+          \end{minipage}
+        \end{figure}
     \end{center}
 
     \begin{center}
-      \vskip 3em
       {\huge \@title}
       \vskip 2em
       {\LARGE \@subtitle}
-      \vskip 5em
+      \vskip 3em
     \end{center}
 
     \begin{center}
