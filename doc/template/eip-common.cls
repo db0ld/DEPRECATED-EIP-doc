@@ -282,3 +282,41 @@
 \newcommand{\mso}[1]{
   \ttfamily #1 \normalfont
 }
+
+
+%% table revisions
+
+\makeatletter
+\edef\@revisions{}
+\edef\@lastrev{}
+\newcommand{\revision}[4]{% version, who, what, when
+  \protected@edef\@lastrev{#1 & #2 & #3 & #4}
+  \protected@edef\@revisions{\@revisions #1 & #2 & #3 & #4\\}
+}
+\newcommand{\revisiontableheaders}{Version & Auteur & Commentaire & Date}
+\newcommand{\listofrevisions}{%
+  {
+    \begin{center}
+      \rowcolors{1}{white}{lightgray}
+      \begin{tabular}{|l|c|p{8cm}|r|}
+        \hline
+        \revisiontableheaders\\
+        \hline
+        \@revisions
+        \hline
+      \end{tabular}
+    \end{center}
+  }
+}
+\newcommand{\lastrevision}{%
+  \begin{center}
+    \begin{tabular}{|l|c|p{8cm}|r|}
+      \hline
+      \revisiontableheaders\\
+      \hline
+      \@lastrev\\
+      \hline
+    \end{tabular}
+  \end{center}
+}
+\makeatother
