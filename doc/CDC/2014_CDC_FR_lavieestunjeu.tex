@@ -1,4 +1,5 @@
 \documentclass{life-fr}
+\usepackage{eurosans}
 
 \begin{document}
 
@@ -25,14 +26,14 @@
 %%\textbf{Table des révisions}\\
 
 \revision{1.0}{Lepage Barbara}{Rappel de l'EIP}{05/04/2012}
-\revision{1.0}{Louvigny Guillaume}{Principe de base du système futur}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
-\revision{1.0}{}{}{05/04/2012}
+\revision{1.1}{Louvigny Guillaume}{Principe de base du système futur}{05/04/2012}
+\revision{1.2}{Lepage Barbara}{Environnement matériel}{05/04/2012}
+\revision{1.3}{Lenormand Frank}{Environnement de réalisation}{05/04/2012}
+\revision{1.4}{Lenormand Frank}{Architecture technique}{05/04/2012}
+\revision{1.5}{Klarman Nicolas}{Gestion de la sécurité}{05/04/2012}
+\revision{1.6}{Lepage Barbara}{Points sensibles}{05/04/2012}
+\revision{1.7}{Le-Cor Wilfried}{Description des tests de premier niveau}{05/04/2012}
+\revision{1.8}{Lassagne David}{Schéma de la base de donnée}{05/04/2012}
 \listofrevisions
 
 \newpage
@@ -48,105 +49,19 @@ Un Epitech Innovative Project ou EIP est l'élément clé du cursus Epitech. Il 
 \section{Sujet de ``La vie est un Jeu''}
 Dans le cadre de notre EIP, nous avons décidé de réaliser un réseau social à but ludique basé sur les « bucket lists ». Une bucket list est « une liste de chose à faire avant de mourir » : elle définit toutes les choses que son auteur désire faire de son existence, une sorte de mémo pour ne pas gâcher sa vie. Notre projet permettra à nos visiteurs de construire leurs propres listes, faire valider leurs exploits, tout en le partageant avec leurs réseaux sociaux. Ainsi, chaque action réalisée par un utilisateur (ajout d'une activité, succès ou échec) sera un fil de discussion dans lequel le visiteur et son réseau pourra discuter et partager différents types de médias (photos, vidéos, etc). L'activité d'un utilisateur sera validée par son propre réseau et apparaîtra sous forme de “succès”, comme dans un jeu vidéo. Le site s'étendra par la suite en proposant d'autres caractéristiques propres aux jeux vidéos.
 
-\sectopn{Principe de base du système futur}
-Vous présenterez une vue générale de votre projet tel qu’il doit l’être fonctionnellement, la cible quand il sera achcevé. Quels sont vos objetifs, le domaine dans lequel il s’inscrit, pour qui et pour quoi il est réalisé. Vous vous baserez sur l’étude de l’existant pour construire cette partie.
+\section{Principe de base du système futur}
 
-Les utilisateurs ciblés par le projet sont très nombreux. Il suffit qu'une personne ait un centre d'intérêt ou une passion couvert par le site pour qu'elle ait une raison de s'y inscrire. Le site comme les applications mobiles seront conçus en vue d'une internationalisation étendue.
+Vous présenterez une vue générale de votre projet tel qu’il doit l’être fonctionnellement, la cible quand il sera achcevé. Quels sont vos objetifs, le domaine dans lequel il s’inscrit, pour qui et pour quoi il est réalisé. Vous vous baserez sur l’étude de l’existant pour construire cette partie.\\
 
-Pour les utilisateurs finaux le projet sera composé d'un site web et de plusieurs applications mobiles incluant Android, iOS et Windows Phone. Pour les développeurs tiers une API sera créée permettant la créations de nouveaux usages.
+Les utilisateurs ciblés par le projet sont très nombreux. Il suffit qu'une personne ait un centre d'intérêt ou une passion couvert par le site pour qu'elle ait une raison de s'y inscrire. Le site comme les applications mobiles seront conçus en vue d'une internationalisation étendue.\\
 
-L'EIP est créé pour pouvoir répondre à un ensemble de fonctionnalités non présentes dans les projets déjà existants. Ces fonctionnalités ne sont pas combinées ou présentes sur les sites concurrents. En effet, nous tenons à mettre en place une plate-forme suffisamment ludique pour être visitée au quotidien, sans pour autant négliger l’aspect social permettant au visiteur de discuter de ses loisirs avec son réseau et de pouvoir partager aisément ses expériences à travers photos et vidéos.
+Pour les utilisateurs finaux le projet sera composé d'un site web et de plusieurs applications mobiles incluant Android, iOS et Windows Phone. Pour les développeurs tiers une API sera créée permettant la créations de nouveaux usages.\\
+
+L'EIP est créé pour pouvoir répondre à un ensemble de fonctionnalités non présentes dans les projets déjà existants. Ces fonctionnalités ne sont pas combinées ou présentes sur les sites concurrents. En effet, nous tenons à mettre en place une plate-forme suffisamment ludique pour être visitée au quotidien, sans pour autant négliger l’aspect social permettant au visiteur de discuter de ses loisirs avec son réseau et de pouvoir partager aisément ses expériences à travers photos et vidéos.\\
 
 À l'issue de la première année de travail sur le projet en partenariat avec l'INRIA et le Koalab Epitech nous estimons avoir un site fonctionnel. Pendant la seconde année de travail sur l'EIP nous aimerions pouvoir signer des partenariats commerciaux avec divers acteurs de domaines culturels ou encore événementiel. Cette période sera également l'occasion d'ajouter de nouvelles fonctionnalités annexes répondant à des besoins émanant par exemple des utilisateurs.
 
-2. Présentation de l’environnement de réalisation
-a. Environnement matériel
-db0 :
-Vous présenterez dans cette partie le matériel nécessaire à la réalisation et au déploiement de
-votre projet (depuis l’environnement de développement à
- l’environnement de production).
-
-Notre projet tourne sur un serveur Ocsigen. Il est installé sur une Dedibox PRO Dell financée par les membres du projet.
-Serveur
-Dell® PowerEdge R210
-Processeur
-1x Intel® Xeon® L3426
-Architecture
-4x 1.86GHz, 64 Bits, Virtualisation
-Mémoire vive
-16 Go DDR3 ECC
-Disque dur
-2 x 2 To SATA2 Raid 0 / Raid 1 HARD (H200)
-Prix mensuel
-49,99 € HT
-
-
-b. Environnement de réalisation
-Vous listerez ici les outils, les normes, les contraintes de votre environnement de réalisation.
-lenorm_f: Afin de communiquer et d’échanger sur le projet, notre groupe de travail s’appuie sur plusieurs outils. En effet, LaVieEstUnJeu dispose de son channel IRC officiel (#life-eip sur irc.epitech.net), dont le but est d’assurer un support rapide aux utilisateurs/contributeurs et gérant une historique des discussions. Additionnelement, l’équipe du projet a accès à une mailing list (hébergée par google groups), et gère tous les documents relatifs à l’évolution du projet grâce aux google documents.
-
-c. Architecture technique
-Listez ici les systèmes, le stockage de données, et autres composants de votre solution. Vous devez également décrire globalement les interactions et dépendances entre les grands composants de votre solution, mais aussi votre mécanisme de staging.
-lenorm_f
-LaVieEstUnJeu se base sur un environnement web en OCaml, donc la composante principale est le serveur web Ocsigen. Le projet s’appuyera également sur js_of_ocaml, un outil de compilation d’OCaml en javascript, et gèrera une base de données grâce à Macaque, un autre projet initié par l’INRIA.
-
-e. Gestion de la sécurité
-Nicolas:
-Mise en place d’une solution de “niveau de confidentialité”, un utilisateur pourra définir un niveau de confidentialité pour chaque utilisateur de son réseau. 
-3 niveaux :
-Vous décrirez comment vous gérez la sécurité, techniques et outils.
-Points sensibles
-db0 : 
-Vous listerez ici les risques sur le projet, qui devront faire l’objet de suivi et d’attention sur le
-projet, et vous proposerez un plan d’action si le risque se produit.
-
-La sécurité des informations est une priorité pour nous. Nous ferons donc très attention à ce que les utilisateurs sachent toujours à tout moment qui a accès à quelles informations.
-
-Nous souhaitons conserver notre idée secrète jusqu’à ce que nous ayons une version de base utilisable.
-
-3. Description des différentes parties du programme à réaliser
-Vous présenterez l’architecture générale du programme, les fonctionnalités du projet, les interactions
-entre les composants fonctionnels, les programmes et fonctionnalités que vous aurez en résultat. Vous
-organiserez cette partie en fonction de votre sujet et domaine.
-
-* Server:
-* Client:
-
-copier-coller le red lolilol
-
-
-
-
-
-
-
-
-
-
-
-
-4. Description de la base de données
-
-5. Description des tests de premier niveau
-Vous décrirez les plans de tests, outils utilisés pour la réalisation des tests.
-le-cor_w:
-- Creation de compte
-- Restriction d’accès par cercles
-- Listing des achievements déja présents dans la DB
-- Séléction d’achievements parmi ceux disponibles.
-- Pondération des achievements
-- Classement : Tests des différents algorithmes de notation.
-- Restriction des achievements pour une catégorie d’utilisateurs (ceux de niveau 3 ne seront pas accessibles au moins de 18 ans et ceux de catégorie 2 aux moins de 14 ans)
-
-6. Organisation projet
-David :
-Vous décrirez votre organisation projet en termes de ressources, planning et méthodologie
-
-planning du red
-
-
-
-\chapter{But et destinataires du projet}
+\section{But et destinataires du projet}
 
 Le projet a pour but de créer une communauté d'utilisateurs autour d'un système d'achievement, directement lié à la vie quotidienne, aux passions ou à la vie professionnelle.\\
 
@@ -156,7 +71,82 @@ Les utilisateurs ciblés sont très nombreux. En théorie, toute personne ayant 
 
 Le site sera multilingue donc ouvert à l'internationalisation.
 
-\chapter{Description fonctionnelle utilisateur}
+\chapter{Présentation de l’environnement de réalisation}
+
+\section{Environnement matériel}
+
+Notre projet tourne sur un serveur Ocsigen. Il est installé sur une Dedibox PRO Dell financée par les membres du projet.
+
+\vspace{20pt}
+
+\begin{tabular}{|c|c|}
+  \hline
+   Serveur & Dell® PowerEdge R210\\
+  \hline
+  Processeur & 1x Intel® Xeon® L3426\\
+  \hline
+  Architecture & 4x 1.86GHz, 64 Bits, Virtualisation\\
+  \hline
+  Mémoire vive & 16 Go DDR3 ECC\\
+  \hline
+  Disque dur & 2 x 2 To SATA2 Raid 0 / Raid 1 HARD (H200)\\
+  \hline
+  Prix mensuel & 49,99 euros HT\\
+  \hline
+\end{tabular}
+
+\vspace{20pt}
+
+\section{Coûts}
+
+\begin{itemize}
+  \item Un compte développeur pour chaque boutique d'application (iOS : AppStore (99\$), Google Play (Android : 25\$) et Marketplace Windows Phone (99\$)) pour les applications mobiles.
+  \item Un serveur dédié, dans un premier temps taillé pour le développement du site pouvant gérer seulement peu d'utilisateurs connectés en même temps à environ 60 euros par mois
+  \item Un serveur de production, qui sera utilisé ultérieurement pouvant aller jusqu'à 600 euros par mois.
+  \item Nous envisageons par la suite, une fois l'application complétement terminée, d'engager un graphiste pour les achievements.
+\end{itemize}
+
+\section{Environnement de réalisation}
+
+Afin de communiquer et d’échanger sur le projet, notre groupe de travail s’appuie sur plusieurs outils.
+
+\begin{itemize}
+  \item En effet, LaVieEstUnJeu dispose de son channel IRC officiel (\#life-eip sur irc.epitech.net), dont le but est d’assurer un support rapide aux utilisateurs/contributeurs et gérant une historique des discussions.
+  \item Additionnelement, l’équipe du projet a accès à une mailing list (hébergée par google groups).
+  \item Elle gère tous les documents relatifs à l’évolution du projet grâce aux google documents.
+  \item La documentation se trouve sur le site vitrine : \url{http://eip.epitech.eu/2014/lavieestunjeu/}
+  \item Nous avons un bug tracker, un wiki et des tickets sur un dépôt privé GitHub.
+\end{itemize}
+
+\section{Architecture technique}
+
+\begin{itemize}
+  \item LaVieEstUnJeu se base sur un environnement web en OCaml, donc la composante principale est le serveur web \href{http://ocsigen.org/}{Ocsigen}.
+  \item Le projet s’appuyera également sur \href{http://ocsigen.org/js_of_ocaml/}{js\_of\_ocaml}, un outil de compilation d’OCaml en javascript.
+  \item Il gèrera une base de données grâce à \href{http://ocsigen.org/macaque/}{Macaque}, un autre projet initié par l’INRIA.
+\end{itemize}
+
+\section{Gestion de la sécurité}
+
+\begin{itemize}
+  \item Mise en place d’une solution de “niveau de confidentialité”, un utilisateur pourra définir un niveau de confidentialité pour chaque utilisateur de son réseau. 
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=10cm]{img/confidentialite.png}
+  \end{center}
+\end{figure}
+
+\end{itemize}
+
+\section{Points sensibles}
+
+\begin{itemize}
+  \item La sécurité des informations est une priorité pour nous. Nous ferons donc très attention à ce que les utilisateurs sachent toujours à tout moment qui a accès à quelles informations.
+  \item Nous souhaitons conserver notre idée secrète jusqu’à ce que nous ayons une version de base utilisable.
+\end{itemize}
+
+\chapter{Description des différentes parties du programme à réaliser}
 
 \section{Le Site Web}
 
@@ -256,16 +246,30 @@ Pour ce qui est des smartphones, nous avons décidés de ne pas coder dans les l
 
 L'API permettrait d'offrir aux développeurs un accès à l'essentiel des fonctionnalités du site. On pourra y récupérer, pour un utilisateur donné, et selon les vœux de celui-ci (token d'acceptation), la liste de ses achievements.
 
-\chapter{Etude des ressources}
 
-\section{Coûts}
+\chapter{Description de la base de données}
+
+\section{Description des tests de premier niveau}
 
 \begin{itemize}
-  \item Un compte développeur pour chaque boutique d'application (iOS : AppStore (99\$), Google Play (Android : 25\$) et Marketplace Windows Phone (99\$)) pour les applications mobiles.
-  \item Un serveur dédié, dans un premier temps taillé pour le développement du site pouvant gérer seulement peu d'utilisateurs connectés en même temps à environ 15 euros par mois
-  \item Un serveur de production, qui sera utilisé ultérieurement pouvant aller jusqu'à 600 euros par mois.
-  \item Nous envisageons par la suite, une fois l'application complétement terminée, d'engager un graphiste pour les achievements.
+  \item{Creation de compte}
+  \item {Restriction d’accès par cercles}
+  \item Listing des achievements déja présents dans la DB
+  \item Séléction d’achievements parmi ceux disponibles.
+  \item Pondération des achievements
+  \item Classement : Tests des différents algorithmes de notation.
+  \item Restriction des achievements pour une catégorie d’utilisateurs (ceux de niveau 3 ne seront pas accessibles au moins de 18 ans et ceux de catégorie 2 aux moins de 14 ans)
 \end{itemize}
+
+\section{Schéma de la base de donnée}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=18cm]{img/imgdb.jpg}
+  \end{center}
+\end{figure}
+
+\chapter{Organisation projet}
 
 \section{Planning}
 
@@ -294,5 +298,9 @@ Nous avons à notre disposition divers outils pour nous organiser et communiquer
 \end{itemize}
 
 Les membres du groupe se réuniront toutes les semaines pour parler de l'avancement du projet, des imprévus rencontrés et des objectifs à court terme.
+
+\section{Planning détaillé avec dates précises}
+
+Veuillez vous reporter au fichier joint \texttt{2014\_GAN\_FR\_lavieestunjeu.pdf}. Il contient le diagramme de Gantt de notre projet.
 
 \end{document}
