@@ -164,7 +164,7 @@
 %% III.5 - Page layout
 
 \makeatletter
-\pagestyle{fancy}
+\pagestyle{fancyplain}
 \lhead{\@title}
 \rhead{\@subtitle}
 \cfoot{\thepage}
