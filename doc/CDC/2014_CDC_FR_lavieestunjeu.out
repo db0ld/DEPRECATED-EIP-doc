@@ -1,0 +1,32 @@
+\BOOKMARK [0][-]{chapter.1}{Rappel de l'EIP}{}
+\BOOKMARK [1][-]{section.1.1}{Qu'est-ce qu'un EIP et Epitech}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Sujet de \253 La vie est un Jeu \273}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Principe de base du syst\350me futur}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{But et destinataires du projet}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Pr\351sentation de l\220environnement de r\351alisation}{}
+\BOOKMARK [1][-]{section.2.1}{Environnement mat\351riel}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Co\373ts}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Environnement de r\351alisation}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Architecture technique}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Gestion de la s\351curit\351}{chapter.2}
+\BOOKMARK [1][-]{section.2.6}{Points sensibles}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Description des diff\351rentes parties du programme \340 r\351aliser}{}
+\BOOKMARK [1][-]{section.3.1}{Le Site Web}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.1.1}{Vue d'ensemble de la page d'accueil avant le login}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.2}{L'inscription, les cinq premi\350res minutes !}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.3}{La page d'accueil utilisateur une fois connect\351}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.4}{Onglet Flux \(Feed\)}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.5}{D\351tails d'un \253 achievement \273}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.6}{Onglet Achievements}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.7}{Onglet Objectifs}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.8}{Onglet Contacts}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.9}{Page Profil}{section.3.1}
+\BOOKMARK [1][-]{section.3.2}{L'application Smartphone}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{L'API}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Description de la base de donn\351es}{}
+\BOOKMARK [1][-]{section.4.1}{Description des tests de premier niveau}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Sch\351ma de la base de donn\351es}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Organisation projet}{}
+\BOOKMARK [1][-]{section.5.1}{Planning}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{\311quipe}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Planning d\351taill\351 avec dates pr\351cises}{chapter.5}
