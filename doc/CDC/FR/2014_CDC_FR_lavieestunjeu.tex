@@ -20,10 +20,11 @@
 \summary
 {
   Le cahier des charges vise à définir les « spécifications de base »
-  de notre service à réaliser.
+  de notre service.
 }
 
 \maketitle
+\authorspage
 
 %% --------------------------------------------------------------------- %%
 
@@ -108,10 +109,6 @@
 
 \tableofcontents
 
-\newpage
-\hspace{2cm}
-\newpage
-
 
 %% --------------------------------------------------------------------- %%
 
@@ -137,7 +134,7 @@ Enfin, l’ouverture offerte aux programmeurs tiers sera également abordée.
 Epitech est une école formant des experts en informatique. Sa pédagogie par projets
 implique directement les étudiants dans leur apprentissage et les rend plus à même
 de réagir et s'adapter aisément, par exemple aux évolutions technologiques qui
-auront lieu au cours de leur carrière.\\
+auront lieu au cours de leur carrière.
 
 \section{L'EIP, élément clé de la réussite scolaire}
 
@@ -155,7 +152,7 @@ Dans le cadre de notre EIP, nous avons décidé de réaliser un réseau social �
 
 Les utilisateurs ciblés par le projet sont très nombreux. Il suffit qu'une personne ait un centre d'intérêt ou une passion couvert(e) par le site pour qu'elle ait une raison de s'y inscrire.\\
 
-Le site comme les applications mobiles seront conçus en vue d'une internationalisation étendue.\\
+Le site comme les applications mobiles seront conçus en vue d'une internationalisation étendue.
 
 \section{Utilisation du projet, rapport à l'existant}
 
@@ -165,12 +162,13 @@ Le projet est créé pour pouvoir répondre à un ensemble de fonctionnalités n
 
 À l'issue de la première année de travail sur le projet en partenariat avec l'INRIA et le Koalab Epitech, nous estimons avoir un site fonctionnel. Pendant la seconde année de travail sur l'EIP nous aimerions pouvoir signer des partenariats commerciaux avec divers acteurs de domaines culturels ou encore événementiels. Cette période sera également l'occasion d'ajouter de nouvelles fonctionnalités annexes répondant à des besoins émanant par exemple des utilisateurs.
 
+\newpage
+
 \section{Remise en contexte technologique}
 
 Aujourd'hui, une part de plus en plus importante des utilisateurs d'Internet sont équipés en smartphones, il est même prévu que le nombre d'utilisateurs en mobilité dépasse celui des utilisateurs sédentaires d'ici quelques années.\\
 \\
-Pour s’adapter à cette évolution et faire face à l’expansion notable de nouvelles technologies, nous avons choisi de proposer à nos utilisateurs des versions dédiées aux plate-formes mobiles majeures.\\
-\\
+Pour s’adapter à cette évolution et faire face à l’expansion notable de nouvelles technologies, nous avons choisi de proposer à nos utilisateurs des versions dédiées aux plate-formes mobiles majeures.
 
 \section{Qu'est-ce qu'un ``Achievement'' ?}
 Le terme achievement (qui peut être traduit par succès ou réalisation en français) est, dans le cadre vidéo-ludique,  un objectif défini à accomplir par le joueur, en dehors de l’objectif principal (c’est-à-dire, gagner ou finir le jeu).\\
@@ -184,7 +182,7 @@ Les achievements permettent au joueur de découvrir plus en profondeur le conten
  Il peut ensuite les partager avec ses amis afin de recueillir les honneurs ou de défier ses amis de faire autant ou mieux, ce qui améliore grandement l’immersion au sein du jeu.\\
 \\
 Nous pensons, qu’il est intéressant d’en faire une analogie avec la vie.\\
- La vie est un jeu comme un autre et mérite d’avoir elle aussi ses achievements.\\
+ La vie est un jeu comme un autre et mérite d’avoir elle aussi ses achievements.
 
 \section{But final du projet}
 
@@ -327,7 +325,9 @@ Son typage fort résous de nombreuses problématiques de sécurité que l'on peu
 \end{figure}
 
 Le framework est particulièrement bien fait et propose par exemple plusieurs niveau de session : des sessions par onglets, des sessions classiques par client, des sessions par utilisateurs (connectés avec le même login à plusieurs endroits), des sessions par groupes d'utilisateurs et des sessions "persistantes" (conservées après la déconnexion).\\
-\\
+
+\newpage
+
 Du fait qu'il soit récent, il a  il a été pensé et conçu pour le HTML5, le Javascript et les dernières technologies côté client du web. Lorsque l'on programme avec Ocsigen, on réalise un véritable programme complet, compilé et lancé. Le language utilisé reste le même : OCaml, pour le côté client comme le côté serveur.\\
 \\
 OCaml facilitant la manipulation d'arbre, le code généré en HTML est fait à partir d'un AST forcément valide.\\
@@ -343,13 +343,15 @@ Lorsque l'on commence à écrire un programme, même s'il l'ont démarre avec de
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=10cm]{img/proj.png}
+    \includegraphics[width=13cm]{img/proj.png}
   \end{center}
 \end{figure}
 
+\newpage
+
 Avec OCaml et Ocsigen, on utilise un compilateur très strict et un typage fort. Aucun écart n'est toléré !\\
 Ainsi, si l'on modifie une partie du programme et que cela à un impact sur une autre fonctionnalité, alors le programme ne compilera tout simplement pas tant que tout n'est pas correct.\\
-\\
+
 C'est très contraignant pour des développeurs qui souhaiteraient créer rapidement de petites applications sans se prendre la tête, puisqu'ils passeraient plus de temps à faire en sorte que le programme compile qu'à réaliser les fonctionnalités en elle-même.\\
 Pour nous, c'est idéal. Nous savons qu'en choisissant cette technologie, nous devrons passer bien plus de temps à concevoir et réaliser notre projet que si nous avions choisi une autre technologie plus classique pour le web. Mais nos ambitions sur ce projet sont grandes et nous souhaitons nous assurer de sa sécurité, sa stabilité, ses performances, sa pureté et son absence totale de bogues. Nous savons que cette solution correspond exactement à nos attentes.
 \\
@@ -390,11 +392,12 @@ fonctionnalités spécialisés pour les terminaux mobiles :
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=13cm]{img/mobiles.jpg}
+    \includegraphics[width=8cm]{img/navigateurs.png}
   \end{center}
 \end{figure}
 
 Notre service est garanti d'être utilisable sur trois types de plateformes :
+
 \begin{itemize}
   \item Navigateurs internet classiques
     \begin{itemize}
@@ -417,6 +420,12 @@ Notre service est garanti d'être utilisable sur trois types de plateformes :
       \item Tablette Android
     \end{itemize}
 \end{itemize}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=13cm]{img/mobiles.jpg}
+  \end{center}
+\end{figure}
 
 Pour chacunes de ces trois plateformes, nous aurons une interface différente
 et adaptée à la résolution et aux fonctionnalités.\\
@@ -717,6 +726,7 @@ Veuillez vous reporter au fichier joint \texttt{2014\_GAN3\_FR\_lavieestunjeu.pd
 
 \chapter{Conclusion}
 
+\section{Conclusion du document}
 
 Ce document présentait donc les spécification de notre EIP, La Vie est un Jeu.\\
 \\
@@ -728,10 +738,15 @@ L’API à destination de développeurs tiers avait également été définie.\\
 \\
 Pour finir, il détaillait également ceux à qui se destine le projet, et estimait les diverses contraintes imposées par celui-ci qu’elles soient d’ordre financières ou organisationnelles.\\
 
+\section{SWOT}
 
-\newpage
-\hspace{2cm}
-\newpage
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=14cm]{img/swot_fr.png}
+  \end{center}
+\end{figure}
+
+%% --------------------------------------------------------------------- %%
 
 \chapter{Annexes}
 
