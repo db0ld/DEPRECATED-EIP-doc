@@ -51,6 +51,7 @@
 
 %% II.1 - Definition
 
+\renewcommand{\familydefault}{\sfdefault}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{eip-common}[2010/07/15 v2.0
   LaTeX class for Eip-themed documents]
@@ -86,6 +87,9 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{fancybox}
 \usepackage{float}
+\usepackage{totpages}
+\usepackage{eurosans}
+\usepackage{currfile} % provided locally : currfile.sty
 \usepackage{atbeginend} % provided locally : atbeginend.sty
 \usepackage{tocloft} % provided locally : tocloft.sty
 \usepackage{multirow} % provided locally : multirow.sty
@@ -165,9 +169,14 @@
 
 \makeatletter
 \pagestyle{fancyplain}
-\lhead{\@title}
-\rhead{\@subtitle}
-\cfoot{\thepage}
+\setlength{\headwidth}{14.5cm}
+\setlength{\headheight}{0.5cm}
+\lhead{\@title / \@subtitle}
+\rhead{\@date}
+\lfoot{\thepage / \ref{TotPages}}
+\cfoot{\currfilebase}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 \makeatother
 
 %% III.6 - Roman chapter style
@@ -212,42 +221,34 @@
 
 \makeatletter
 \def \maketitle {
+  \fancyput(-2.54cm,-27.16cm){\includegraphics[width=21cm,height=29.7cm]{back_firstpage}}
+
   \begin{titlepage}
-
     \begin{center}
-      \begin{figure}[t]
-        \begin{minipage}[m]{0.5\linewidth}
-          \hspace{4cm}
-          \includegraphics[width=8cm]{\@schoollogo}
-          \end{minipage}
-        \end{figure}
+      \vspace*{22.5cm}
+      {\huge \@subtitle}
+      \vskip 1em
+      \emph{\summarytitle : \@summary}
     \end{center}
 
-    \begin{center}
-      \begin{figure}[t]
-        \begin{minipage}[m]{0.5\linewidth}
-          \includegraphics[width=16cm]{\@lifelogo}
-          \end{minipage}
-        \end{figure}
-    \end{center}
-
-    \begin{center}
-      {\huge \@title}
-      \vskip 2em
-      {\LARGE \@subtitle}
-      \vskip 3em
-    \end{center}
-
-    \begin{center}
-	  \@author
-    \end{center}
-	\vskip 3em
-    \emph{\summarytitle : \@summary}
   \end{titlepage}
+
+\fancyput(-2.54cm,-27.16cm){\includegraphics[width=21cm,height=29.7cm]{back}}
+
+
 }
 \makeatother
 
-\fancyput(-2.54cm,-27.16cm){\includegraphics[width=21cm,height=29.7cm]{back}}
+\makeatletter
+\newcommand{\authorspage}
+{
+  \setcounter{page}{2}
+  \chapter*{\begin{center}Le Groupe\end{center}}
+    \begin{center}
+      \@author
+    \end{center}
+}
+\makeatother
 
 %% V - Custom helper commands
 
