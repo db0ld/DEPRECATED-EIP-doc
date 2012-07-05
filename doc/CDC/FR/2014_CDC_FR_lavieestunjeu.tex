@@ -83,7 +83,7 @@
   \hline
   Mots clés & ``cahier des charges'', ``lavieestunjeu''\\
   \hline
-  Révision actuelle & 2.0\\
+  Révision actuelle & 2.1\\
   \hline
   Site vitrine & http://eip.epitech.eu/2014/lavieestunjeu/\\
   \hline
@@ -103,6 +103,7 @@
 \revision{1.7}{Le-Cor Wilfried}{Description des tests de premier niveau}{05/04/2012}
 \revision{1.8}{Lassagne David}{Schéma de la base de données}{05/04/2012}
 \revision{2.0}{Lepage Barbara}{Mise à jour du résumé et remaniement du plan global}{01/07/2012}
+\revision{2.1}{Guillaume Louvigny}{Reprise de la partie applications mobiles et corrections mineures}{05/07/2012}
 \listofrevisions
 
 \newpage
@@ -158,7 +159,7 @@ Le site comme les applications mobiles seront conçus en vue d'une international
 
 Pour les utilisateurs finaux, le projet sera composé d'un site web et de plusieurs applications mobiles incluant Android, iOS et Windows Phone. Pour les développeurs tiers, une API sera créée permettant la création de nouveaux usages.\\
 
-Le projet est créé pour pouvoir répondre à un ensemble de fonctionnalités non présentes dans les projets déjà existants. Ces fonctionnalités ne sont pas combinées ou présentes sur les sites concurrents. En effet, nous tenons à mettre en place une plate-forme suffisamment ludique pour être visitée au quotidien, sans pour autant négliger l’aspect social permettant au visiteur de discuter de ses loisirs avec son réseau et de pouvoir partager aisément ses expériences à travers photos et vidéos.\\
+Le projet est créé pour pouvoir répondre à un ensemble de fonctionnalités non présentes dans les projets déjà existants. Ces fonctionnalités ne sont pas combinées ou présentes sur les sites concurrents. En effet, nous tenons à mettre en place une plateforme suffisamment ludique pour être visitée au quotidien, sans pour autant négliger l’aspect social permettant au visiteur de discuter de ses loisirs avec son réseau et de pouvoir partager aisément ses expériences à travers photos et vidéos.\\
 
 À l'issue de la première année de travail sur le projet en partenariat avec l'INRIA et le Koalab Epitech, nous estimons avoir un site fonctionnel. Pendant la seconde année de travail sur l'EIP nous aimerions pouvoir signer des partenariats commerciaux avec divers acteurs de domaines culturels ou encore événementiels. Cette période sera également l'occasion d'ajouter de nouvelles fonctionnalités annexes répondant à des besoins émanant par exemple des utilisateurs.
 
@@ -168,13 +169,13 @@ Le projet est créé pour pouvoir répondre à un ensemble de fonctionnalités n
 
 Aujourd'hui, une part de plus en plus importante des utilisateurs d'Internet sont équipés en smartphones, il est même prévu que le nombre d'utilisateurs en mobilité dépasse celui des utilisateurs sédentaires d'ici quelques années.\\
 \\
-Pour s’adapter à cette évolution et faire face à l’expansion notable de nouvelles technologies, nous avons choisi de proposer à nos utilisateurs des versions dédiées aux plate-formes mobiles majeures.
+Pour s’adapter à cette évolution et faire face à l’expansion notable de nouvelles technologies, nous avons choisi de proposer à nos utilisateurs des versions dédiées aux plateformes mobiles majeures.
 
 \section{Qu'est-ce qu'un ``Achievement'' ?}
-Le terme achievement (qui peut être traduit par succès ou réalisation en français) est, dans le cadre vidéo-ludique,  un objectif défini à accomplir par le joueur, en dehors de l’objectif principal (c’est-à-dire, gagner ou finir le jeu).\\
+Le terme achievement (qui peut être traduit par succès ou réalisation en français) est, dans le cadre vidéoludique,  un objectif défini à accomplir par le joueur, en dehors de l’objectif principal (c’est-à-dire, gagner ou finir le jeu).\\
  Les achievements sont donc des récompenses honorifiques ajoutant du challenge pour le joueur.\\
 \\
-Nous pourrions utiliser une traduction française du terme achievement mais nous pensons que achievement est le terme le plus populaire dans le monde video-ludique.\\
+Nous pourrions utiliser une traduction française du terme achievement mais nous pensons que achievement est le terme le plus populaire dans le monde vidéoludique.\\
 \\
 Les achievements permettent au joueur de découvrir plus en profondeur le contenu du jeu et donc d’explorer de nouveaux horizons.\\
  L’obtention est souvent un moment agréable pour le joueur.\\
@@ -280,7 +281,7 @@ Chaque « achievement » disposera d'une fonction de validation à l'image des b
 
 \subsection{Onglet Achievements}
 
-L'utilisateur pourra sélectionner des packs qui contiendront les « achievements » à accomplir. Les packs seront tous disponibles et classés par thématiques dans une sous-catégorie, mais la plate-forme proposera d'abord à l'utilisateur des packs d'« achievements » correspondant aux centres d'intérêt de ce dernier, ou encore de sa tranche d'âge. Une fois un pack sélectionné, l'utilisateur peut aussi définir certains « achievements » comme étant ses objectifs, et ainsi notifier son réseau.
+L'utilisateur pourra sélectionner des packs qui contiendront les « achievements » à accomplir. Les packs seront tous disponibles et classés par thématiques dans une sous-catégorie, mais la plateforme proposera d'abord à l'utilisateur des packs d'« achievements » correspondant aux centres d'intérêt de ce dernier, ou encore de sa tranche d'âge. Une fois un pack sélectionné, l'utilisateur peut aussi définir certains « achievements » comme étant ses objectifs, et ainsi notifier son réseau.
 
 \subsection{Onglet Objectifs}
 
@@ -367,9 +368,9 @@ de la version 2.0.\\
 \\
 De ce fait, le serveur Ocsigen et tout ses modules associés ne fonctionne
 pour l'instant que sur très peu de distributions. Il fontionne sur certaines
-distrubutions Linux connues telles que Ubuntu, Debian ou Arch Linux. Il ne
-fonctionne sur aucune distributions Microsoft Windows, Apple Mac OS X ou encore
-BSD.\\
+distrubutions Linux connues telles que Ubuntu, Debian ou Arch Linux. À ce jour 
+il ne fonctionne pas sur Microsoft Windows, Apple Mac OS X ou encore les 
+distributions BSD.\\
 \\
 Nous avons tout de même décidé de mettre en avant l'innovation par rapport
 à la portabilité sur notre projet. Notre serveur n'est donc pas portable.
@@ -379,12 +380,14 @@ Nous avons tout de même décidé de mettre en avant l'innovation par rapport
 Pour palier à ce désavantage contraignant, nous avons décidé de rendre notre
 service ultra portable côté client.\\
 \\
-Le choix de l'utilisation d'Ocsigen côté client est évidante puisque cette
-technologie est adapté à ces 3 types d'utilisation et possède de nombreuses
-fonctionnalités spécialisés pour les terminaux mobiles :
+Le choix de l'utilisation d'Ocsigen côté client est évidante puisque cette 
+technologie est adaptée aux trois cas d'utilisation que représentent l'accès
+\textit{via} un poste fixe, un smartphone ou encore une tablette. Dans le cadre
+de la version web mobile Ocsigen  gère de plus de nombreuses fonctionnalités 
+spécifiques aux terminaux mobiles :
 \begin{itemize}
   \item Tactile (toucher simple, toucher glissé, ...)
-  \item Géo-localisation
+  \item Géolocalisation
   \item Orientation
   \item Appareil photo
   \item ...
@@ -410,13 +413,13 @@ Notre service est garanti d'être utilisable sur trois types de plateformes :
   \item Terminaux mobiles format téléphone
     \begin{itemize}
       \item Android
-      \item I-OS
+      \item iOS
       \item Windows Mobile
-      \item Blackberry
+      \item BlackBerry
     \end{itemize}
   \item Tablettes
     \begin{itemize}
-      \item I-Pad
+      \item iPad
       \item Tablette Android
     \end{itemize}
 \end{itemize}
@@ -430,7 +433,8 @@ Notre service est garanti d'être utilisable sur trois types de plateformes :
 Pour chacunes de ces trois plateformes, nous aurons une interface différente
 et adaptée à la résolution et aux fonctionnalités.\\
 Pour chacun des types de périphériques, nous aurons un programme différent,
-codé dans le langage propre à celui-ci, faisant appel à notre service Ocsigen.\\
+codé dans le langage propre à celui-ci, faisant appel à notre service Ocsigen
+\textit{via} l'API développeurs détaillée par la suite.\\
 En tout, nous aurons :
 \begin{itemize}
   \item 3 services différents en Ocsigen
@@ -463,19 +467,19 @@ On pourra donc dire que ``La Vie Est Un Jeu'' est \textbf{ultra-portable}.
   \end{center}
 \end{figure}
 
-\section{Technologie et portabilité de la base de donnée}
+\section{Technologie et portabilité de la base de données}
 
-Pour la base de donnée, nous utilisons un service qui nous ai imposé par
+Pour la base de données, nous utilisons un service qui nous ai imposé par
 \textbf{Ocsigen}, la technologie que nous utilisons pour tout notre projet.\\
 Ce service s'appelle \textbf{Macaque}. Il propose une approche fonctionnelle
-et fortement typée de gestion de base de donnée.\\
+et fortement typée de gestion de base de données.\\
 Ce service est basé sur PostgreSQL et il est possible d'intéragir avec la
-base de donnée via d'autres systèmes utilisant PostgreSQL.
-Cependant, l'intéraction avec la base de donnée depuis notre service Ocsigen
+base de données via d'autres systèmes utilisant PostgreSQL.
+Cependant, l'intéraction avec la base de données depuis notre service Ocsigen
 ne peut se faire qu'avec Macaque.\\
 \\
 Afin de pouvoir utiliser d'autres types de bases de donnée en cas de besoin
-pour la suite, nous comptons proposer des convertisseurs de base de donnée.\\
+pour la suite, nous comptons proposer des convertisseurs de base de données.\\
 Nous proposerons un convertisseur PostgreSQL à MySQL dans un autre langage et
 au besoin d'autres convertisseurs.
 
@@ -629,7 +633,7 @@ Nous pensons mettre en production une version finale pour septembre 2013.\\
 
 \subsection{ Troisième année : Mise en production, partennariats commerciaux, création d'entreprise}
 
-La dernière période sera consacrée aux problématiques de communication, et dans une moindre mesure de développement. Ainsi, durant la dernière année du projet, nous tâcherons de faire connaître ce dernier de diverses façons, pour créer la communauté indispensable à notre plate-forme, en plus de la finalisation technique du produit. Nous pourrons de ce fait bénéficier de retours d'utilisateurs, afin de corriger les anomalies et peaufiner la plate-forme.\\
+La dernière période sera consacrée aux problématiques de communication, et dans une moindre mesure de développement. Ainsi, durant la dernière année du projet, nous tâcherons de faire connaître ce dernier de diverses façons, pour créer la communauté indispensable à notre plateforme, en plus de la finalisation technique du produit. Nous pourrons de ce fait bénéficier de retours d'utilisateurs, afin de corriger les anomalies et peaufiner la plateforme.\\
 Nous souhaitons obtenir des partennariats commerciaux pour faire connaître notre plateforme.\\
 Nous souhaitons inscrire notre projet à de nombreux concours d'innovations et de jeunes entreprises afin d'obtenir une visibilité et un public et pourquoi pas des financements supplémentaires.\\
 \\
@@ -681,14 +685,14 @@ réalisés, en les faisant eux-même ou en répartissant le travail.
   \item \textbf{Wilfried Le-Cor} est responsable développement Android
   \item \textbf{François Glorieux} est responsable développement Windows
   \item \textbf{Youssef El-Outmani} est responsable développement Blackberry
-  \item \textbf{Nicolas Klarman} est responsable développement I-OS
-  \item \textbf{Frank Lenormand} est responsable multi-média (photos, vidéos, ...)
+  \item \textbf{Nicolas Klarman} est responsable développement iOS
+  \item \textbf{Frank Lenormand} est responsable multimédia (photos, vidéos, ...)
   \item \textbf{Guillaume Louvigny} est responsable réseaux sociaux (Facebook,
     Google+, Twitter, ...)
   \item \textbf{Frank Lenormand} est responsable commit
   \item \textbf{Simon Corsin} est responsable développeurs tiers (API)
   \item \textbf{Wilfried Le-Cor} est responsable intéraction utilisateurs
-  \item \textbf{Nicolas Klarman} est responsable Game Play
+  \item \textbf{Nicolas Klarman} est responsable Gameplay
   \item \textbf{François Glorieux} est responsable aspect communautaire
   \item \textbf{Simon Corsin} est responsable des tests de mise en production
 \end{itemize}
@@ -732,7 +736,7 @@ Ce document présentait donc les spécification de notre EIP, La Vie est un Jeu.
 \\
 Nous y avons décrit l'ensemble des fonctionnalités qui seront proposées, ce qui inclue à la fois le site web ainsi que les applications mobiles.\\
 \\
-Était également présenté la définition de la base de donnée applicable sur toutes les plates-formes visées.\\
+Était également présenté la définition de la base de données applicable sur toutes les plates-formes visées.\\
 \\
 L’API à destination de développeurs tiers avait également été définie.\\
 \\
@@ -780,100 +784,103 @@ Pour finir, il détaillait également ceux à qui se destine le projet, et estim
 
 \section{Glossaire}
 
-\subsection{ Algorithme}
-Suite finie et non-ambiguë d’instructions permettant de donner la réponse à un problème.
 
-\subsection{ API}
+\begin{description}
+\item[Algorithme]
+Suite finie et non-ambiguë d’instructions permettant de donner la réponse à un problème.
+\item[API]
 En français ``interface de Programmation'', est une interface fournie par un programme informatique permettant l'interaction des programmes les uns avec les autres.
 
-\subsection{ Application mobile}
+\item[Application mobile]
 Une application mobile est une application développée pour être installée sur un appareil électronique mobile.
 
-\subsection{ Architecture Web}
+\item[Architecture Web]
 Architecture Web désigne la structure générale inhérente à un environnement web.
 
-\subsection{ Base de données}
+\item[Base de données]
 Une base de données est un lot d'informations stockées dans un dispositif informatique.
 
-\subsection{ Breaking news}
+\item[Breaking news]
 En français ``Dernières Nouvelles''.
 
-\subsection{ Bug tracker}
+\item[Bug tracker]
 En français ``Logiciel de suivi de problèmes'',  logiciel permettant d'aider les utilisateurs et les développeurs à améliorer la qualité d'un logiciel en trouvant les failles dudit logiciel.
 
-\subsection{ Cahier des charges}
+\item[Cahier des charges]
 Le Cahier des charges vise à définir simplement les spécifications d’un produit ou d’un service à réaliser.
 
-\subsection{ Dépôt}
+\item[Dépôt]
 Un dépôt est un stockage centralisé et organisé de données.
 
-\subsection{ Diagramme de Gantt}
+\item[Diagramme de Gantt]
 Un diagramme de Gantt est un outil utilisé en ordonnancement et gestion de projet et permettant de visualiser dans le temps les diverses tâches liées composant un projet.
 
-\subsection{ Diaporama}
+\item[Diaporama]
 Un diaporama est une suite d’images ou de documents reliés par des effets et sur lesquels il est possible de mettre du son.
 
-\subsection{ Doodle}
+\item[Doodle]
 Doodle.com est un site web de planification et de sondage de la société suisse Doodle AG.
 
-\subsection{ GitHub}
+\item[GitHub]
 Github est un service Web d'hébergement et de gestion de développement de logiciels, utilisant le programme Git. 
 
-\subsection{ Google Docs}
+\item[Google Docs]
 Google Docs est la suite des évolutions de Google Spreadsheets, logiciel de traitement de texte. Ces programmes fusionnés permettent un travail collaboratif en ligne.
 
-\subsection{ Google Talk}
+\item[Google Talk]
 Google Talk est un logiciel propriétaire et service de messagerie instantanée et de voix sur IP basé sur Jabber et développé par la société Google.
 
-\subsection{ IRC}
+\item[IRC]
 IRC est un protocole de communication textuelle sur internet.
 
-\subsection{ JavaScript}
+\item[JavaScript]
 JavaScript est un langage de programmation de scripts principalement utilisé pour les pages Web interactives.
 
-\subsection{ Login}
+\item[Login]
 En français ``Identifiant'', information permettant à une personne de s'identifier auprès d'un système.
 
-\subsection{ Mailing list}
+\item[Mailing list]
 En français ``Liste de diffusion'', utilisation spécifique du courrier électronique qui permet le publipostage d'informations aux utilisateurs qui y sont inscrits.
 
-\subsection{ Mise en production}
+\item[Mise en production]
 Mise à disposition ``totale'' d’un service ou d’un produit.
 
-\subsection{ Ocaml}
+\item[Ocaml]
 Anciennement connu sous le nom d'Objective Caml, c’est l'implémentation la plus avancée du langage de programmation Caml.
 
-\subsection{ Ocsigen}
+\item[Ocsigen]
 Framework de développement Web, développé par le laboratoire français PPS.
 
-\subsection{ Réseau}
+\item[Réseau]
 Maillage de liens entre différents équipements informatiques permettant un partage d’informations.
 
-\subsection{ Réseau social}
+\item[Réseau social]
 Ensemble d'identités sociales, telles que des individus ou encore des organisations, reliées entre elles par des liens créés lors d’interactions sociales.
 
-\subsection{ Service}
+\item[Service]
 Apporte une valeur ajoutée à un produit ou assure un travail nécessaire à une entreprise ou à un particulier.
 
-\subsection{ Site vitrine}
+\item[Site vitrine]
 Site internet composé de quelques pages présentant une société. Permet à une entreprise de communiquer avec le monde.
 
-\subsection{ Smartphone}
+\item[Smartphone]
 Téléphone mobile disposant aussi des fonctions d'un assistant numérique personnel. Il fournit des fonctionnalités basiques comme l'agenda, le calendrier, la navigation sur le web, la consultation du courrier électronique, de messageries instantanées, le GPS...
 
-\subsection{ Android}
+\item[Android]
 Système d’exploitation utilisant le noyau Linux pour smartphones, PDAet terminaux mobiles conçu par Android, une startup rachetée par Google.
 
-\subsection{ iOS}
+\item[iOS]
 Système d’exploitation mobile développé par Apple pour l'iPhone, l'iPod touch, et l'iPad. Il est dérivé de Max OS X dont il partage les fondations.
 
-\subsection{ Windows Phone}
+\item[Windows Phone]
 Système d’exploitation mobile développé par Microsoft pour succéder à Windows Mobile, sa précédente plateforme logicielle.
 
-\subsection{ Version Bêta}
+\item[Version Bêta]
 Version de test comportant toutes les fonctionnalités d'un programme. C'est grâce à cette version que les testeurs remontent les éventuels problèmes.
 
-\subsection{ Wiki}
+\item[Wiki]
 Espace collaboratif sur lequel les utilisateurs sont invités à rédiger des documents de travail.
 
+
+\end{description}
 \end{document}
