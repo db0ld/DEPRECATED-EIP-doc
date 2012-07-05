@@ -58,11 +58,6 @@
 
 %% II.2 - Class options and parent class
 
-\newcommand{\summarytitle}{Abstract}
-\DeclareOption{fr}{%
-  \renewcommand{\summarytitle}{R\'esum\'e}%
-}
-
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{report}
 }
@@ -228,7 +223,7 @@
       \vspace*{22.5cm}
       {\huge \@subtitle}
       \vskip 1em
-      \emph{\summarytitle : \@summary}
+      \emph{\@summary}
     \end{center}
 
   \end{titlepage}

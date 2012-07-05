@@ -6,7 +6,7 @@ DEPS =
 
 # Relative path to the LaTeX koala documentclass setup files
 # You should not need to touch this
-RELPATH = /home/db0/dev/Life-is-FullEIP/doc/template/
+RELPATH = ../../template/
 
 # You should not touch this either
 include $(RELPATH)/Makefile.LaTeX
