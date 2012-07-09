@@ -243,6 +243,14 @@
       \@author
     \end{center}
 }
+\newcommand{\authorspageen}
+{
+  \setcounter{page}{2}
+  \chapter*{\begin{center}Team\end{center}}
+    \begin{center}
+      \@author
+    \end{center}
+}
 \makeatother
 
 %% V - Custom helper commands
