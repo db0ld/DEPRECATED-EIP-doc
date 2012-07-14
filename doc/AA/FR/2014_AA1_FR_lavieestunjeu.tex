@@ -82,6 +82,7 @@
 \revision{0.10}{Nicolas Klarman}{Tailles et performances}{11/07/2012}
 \revision{0.11}{Youssef El-Outmani}{Qualité}{11/07/2012}
 \revision{0.12}{Barbara Lepage}{Schéma d'introduction}{11/07/2012}
+\revision{0.13}{François Glorieux}{Partie Composants, schéma et correction}{12/07/2012}
 \listofrevisions
 
 \newpage
@@ -297,6 +298,16 @@ Ces documents peuvent être téléchargés sur notre site vitrine :
   \end{center}
 \end{figure}
 
+Dans ce document traitant de l'architecture de notre projet, nous nous efforcerons d'avoir une approche aussi globale que possible, abordant un certain nombre d’aspects à plusieurs niveaux :
+- utilisateur,  en particulier pour les fonctionnalités qui seront mises à sa disposition dans notre application finale ;
+- hardware, afin d'identifier les différentes composantes aussi bien internes (et ainsi pouvoir prendre en compte nos limites en termes de matériel) qu'externes (afin d'avoir de la visibilité sur les outils à même d'utiliser notre application dans le futur) ;
+- données, également afin d'avoir une première réflexion sur notre façon de structurer les informations que nous allons stocker ;
+- logique, afin d'avoir d'ores et déjà une idée d'architecture logicielle qui structurera notre approche du projet en découpant en couches les différents niveaux applicatifs.
+
+Chacun de ces points sera étudié au travers de diagrammes UML qui seront à chaque fois introduits avant d'être présentés.
+
+En dehors de ces différents points qui seront abordés au travers de diagrammes divers, nous tenterons d'identifier les différentes contraintes induites par notre projet afin d'anticiper les problématiques à venir, qu'elles soient de nature fonctionnelle ou non fonctionnelle, et nous nous efforcerons d'avoir un regard qualitatif sur notre produit final au travers d'un audit et de conjectures concernant diverses données chiffrées.
+
 % --------------------------------------------------------------------- %%
 
 \chapter{Architecture, buts et contraintes}
@@ -416,16 +427,20 @@ Le schéma présent sur la page suivante détaille le déploiement de l'applicat
 
 % --------------------------------------------------------------------- %%
 
-\chapter{Implémentation}
-\section{Vue globale}
+\chapter{Couches applicatives et Composants principaux}
 %% Vous présenterez ici votre architecture logicielle à proprement parler, de façon plus détaillée, modèle en couche, N-Tiers, MVC, MVVM, MVP, … Vous préciserez les limites de chaque systèmes pour identifier les composants de chaque module (diagramme de package, diagramme de composants UML) 
 
-TODO
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=11.5cm]{img/couches_application.png}
+  \end{center}
+\end{figure}
 
-\section{Couches applicatives}
-%% Vous présenterez ici une vue plus détaillée avec des diagrammes objets, diagramme de classe par couche / composant 
-
-TODO
+Le projet disposera de plusieurs composants.
+La plus accessible, permettant la plus grande diversité au niveau du matériel dont dispose le client sera une application web (portable pour les mobiles).
+Plusieurs applications mobiles en dériveront pour les plates-formes Android, iOS et Windows Phone.
+Les données utilisateurs seront stockées dans une base de données.
+Un serveur Ocsigen disposera d’un accès direct à cette base et transmettra les données aux différents clients.
 
 % --------------------------------------------------------------------- %%
 
@@ -476,7 +491,23 @@ Enfin, cette non centralisation des ressources est une mesure de sécurité effi
 
 \chapter{Conclusion}
 
-TODO
+En conclusion de cette étude qui se place au niveau de la conception et de l'architecture de notre
+EIP, nous pouvons affirmer être aujourd'hui pleinement en mesure d'aborder notre projet
+l'esprit libre, ayant désormais l'appui d'une ligne directrice sur de nombreux
+aspects de notre application finale.
 
+Les réflexions et conclusions amenées par nos différents schémas nous ont permis
+de faire face à de nouvelles problématiques de conception et à initier des dialogues
+sur des points qui n'avaient pas encore été abordés et qui, dans une phase avancée
+du projet, auraient pu amener à de plus amples difficultés si elles n'avaient pas été
+détectées plus tôt.
+
+Nous comprenons aujourd'hui toute l'ampleur et l'utilité de ce travail d'analyse en amont
+d'un projet de grande envergure, et nous ne manquerons pas de faire évoluer cette
+étude tout au long de notre EIP afin de respecter la méthode agile de gestion
+de projet que nous nous sommes fixée et qui nous oblige à revenir de façon itérative
+sur la réflexion liée à notre conception.
+
+% --------------------------------------------------------------------- %%
 
 \end{document}
