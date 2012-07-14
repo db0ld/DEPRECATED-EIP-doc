@@ -37,7 +37,19 @@
   et enfin les partager.\\
   C'est donc à la fois un jeu et un réseau social, destiné à tous les âges !\\
   \\
-  TODO
+  Dans ce document traitant de l'architecture de notre projet, nous nous efforcerons d'avoir une approche aussi globale que possible, abordant un certain nombre d’aspects à plusieurs niveaux :
+
+\begin{itemize}
+      \item utilisateur,  en particulier pour les fonctionnalités qui seront mises à sa disposition dans notre application finale ;
+      \item hardware, afin d'identifier les différentes composantes aussi bien internes (et ainsi pouvoir prendre en compte nos limites en termes de matériel) qu'externes (afin d'avoir de la visibilité sur les outils à même d'utiliser notre application dans le futur) ;
+      \item données, également afin d'avoir une première réflexion sur notre façon de structurer les informations que nous allons stocker ;
+      \item logique, afin d'avoir d'ores et déjà une idée d'architecture logicielle qui structurera notre approche du projet en découpant en couches les différents niveaux applicatifs.
+\end{itemize}
+
+Chacun de ces points sera étudié au travers de diagrammes UML qui seront à chaque fois introduits avant d'être présentés.
+
+En dehors de ces différents points qui seront abordés au travers de diagrammes divers, nous tenterons d'identifier les différentes contraintes induites par notre projet afin d'anticiper les problématiques à venir, qu'elles soient de nature fonctionnelle ou non fonctionnelle, et nous nous efforcerons d'avoir un regard qualitatif sur notre produit final au travers d'un audit et de conjectures concernant diverses données chiffrées.
+
 }
 
 \chapter*{Informations du document}
@@ -83,6 +95,7 @@
 \revision{0.11}{Youssef El-Outmani}{Qualité}{11/07/2012}
 \revision{0.12}{Barbara Lepage}{Schéma d'introduction}{11/07/2012}
 \revision{0.13}{François Glorieux}{Partie Composants, schéma et correction}{12/07/2012}
+\revision{0.14}{Guillaume Louvigny}{Mise en page et correction mineures}{12/07/2012}
 \listofrevisions
 
 \newpage
@@ -299,20 +312,20 @@ Ces documents peuvent être téléchargés sur notre site vitrine :
 \end{figure}
 
 \newpage
-Dans ce document traitant de l'architecture de notre projet, nous nous efforcerons d'avoir une approche aussi globale que possible, abordant un certain nombre d’aspects à plusieurs niveaux :
-\\
-- utilisateur,  en particulier pour les fonctionnalités qui seront mises à sa disposition dans notre application finale ;
-\\
-- hardware, afin d'identifier les différentes composantes aussi bien internes (et ainsi pouvoir prendre en compte nos limites en termes de matériel) qu'externes (afin d'avoir de la visibilité sur les outils à même d'utiliser notre application dans le futur) ;
-\\
-- données, également afin d'avoir une première réflexion sur notre façon de structurer les informations que nous allons stocker ;
-\\
-- logique, afin d'avoir d'ores et déjà une idée d'architecture logicielle qui structurera notre approche du projet en découpant en couches les différents niveaux applicatifs.
-\\
+
+  Dans ce document traitant de l'architecture de notre projet, nous nous efforcerons d'avoir une approche aussi globale que possible, abordant un certain nombre d’aspects à plusieurs niveaux :
+
+\begin{itemize}
+      \item utilisateur,  en particulier pour les fonctionnalités qui seront mises à sa disposition dans notre application finale ;
+      \item hardware, afin d'identifier les différentes composantes aussi bien internes (et ainsi pouvoir prendre en compte nos limites en termes de matériel) qu'externes (afin d'avoir de la visibilité sur les outils à même d'utiliser notre application dans le futur) ;
+      \item données, également afin d'avoir une première réflexion sur notre façon de structurer les informations que nous allons stocker ;
+      \item logique, afin d'avoir d'ores et déjà une idée d'architecture logicielle qui structurera notre approche du projet en découpant en couches les différents niveaux applicatifs.
+\end{itemize}
 
 Chacun de ces points sera étudié au travers de diagrammes UML qui seront à chaque fois introduits avant d'être présentés.
 
 En dehors de ces différents points qui seront abordés au travers de diagrammes divers, nous tenterons d'identifier les différentes contraintes induites par notre projet afin d'anticiper les problématiques à venir, qu'elles soient de nature fonctionnelle ou non fonctionnelle, et nous nous efforcerons d'avoir un regard qualitatif sur notre produit final au travers d'un audit et de conjectures concernant diverses données chiffrées.
+
 
 % --------------------------------------------------------------------- %%
 
