@@ -105,6 +105,7 @@
 \revision{2.0}{Lepage Barbara}{Mise à jour du résumé et remaniement du plan global}{01/07/2012}
 \revision{2.1}{Louvigny Guillaume}{Reprise de la partie applications mobiles et corrections mineures}{05/07/2012}
 \revision{2.2}{Glorieux François}{Correction de l'ensemble du document et uniformisation}{07/07/2012}
+\revision{2.3}{Glorieux François}{Mise à jour du document en tenant compte des nouveaux choix technologiques}{16/03/2013}
 \listofrevisions
 
 \newpage
@@ -373,76 +374,27 @@ distributions Linux connues telles que Debian, Ubuntu ou Arch Linux. À ce jour,
 il ne fonctionne pas sur Microsoft Windows, Apple Mac OS X ou encore sur les 
 distributions BSD.\\
 \\
-Nous avons tout de même décidé de mettre en avant l'innovation par rapport
-à la portabilité sur notre projet. Notre serveur n'est donc pas portable.
+Notre serveur n'est donc pas portable.
 
 \subsection{Client}
 
-Pour pallier ce désavantage contraignant, nous avons décidé de rendre notre
-service ultra-portable côté client.\\
+Pour le client, apres avoir change notre idee de depart qui etait l'utilisation d'Ocsigen, nous avons decide de miser sur la scalabilite et la performance en utilisant NodeJS.\\
 \\
-Le choix de l'utilisation d'Ocsigen côté client est évident puisque cette 
-technologie est adaptée aux trois cas d'utilisation que représentent l'accès
-\textit{via} un poste fixe, un smartphone ou encore une tablette. Dans le cadre
-de la version web mobile, Ocsigen gère de plus de nombreuses fonctionnalités 
-spécifiques aux terminaux mobiles :
-\begin{itemize}
-  \item tactile (toucher simple, toucher glissé, ...) ;
-  \item géolocalisation ;
-  \item orientation ;
-  \item appareil photo ;
-  \item ...
-\end{itemize}
+
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=8cm]{img/navigateurs.png}
+    \includegraphics[width=13cm]{img/nodejs.png}
   \end{center}
 \end{figure}
 
-Notre service est garanti d'être utilisable sur trois types de plates-formes.
+Ce framework en JavaScript nous offre la possibilite d'etendre facilement le service sur de nombreux serveurs sans devoir tout repenser.\\
 
-\begin{itemize}
-  \item Navigateurs internet classiques
-    \begin{itemize}
-      \item Google Chrome
-      \item Mozilla Firefox
-      \item Internet Explorer
-      \item Apple Safari
-      \item Opera
-    \end{itemize}
-  \item Terminaux mobiles format téléphone
-    \begin{itemize}
-      \item Android
-      \item iOS
-      \item Windows Mobile
-      \item BlackBerry
-    \end{itemize}
-  \item Tablettes
-    \begin{itemize}
-      \item iPad
-      \item Tablette Android
-    \end{itemize}
-\end{itemize}
+Contrairement a Ocsigen qui est relativement nouveau et en pleine expansion, NodeJS est un framework ayant fait ses preuves et utilise par des grands noms de l'Internet tels que Twitter.\\
+Il permet de gerer une grosse charge d'informations et de nombreux utilisateurs.\\
 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=13cm]{img/mobiles.jpg}
-  \end{center}
-\end{figure}
+L'equipe est egalement plus experimentee en JavaScript qu'en OCaml. Cela reduit donc considerablement le temps d'apprentissage d'une nouvelle technologie. Il est egalement plus facile de trouver des developpeurs JavaScript que des developpeurs OCaml.\\
 
-Pour chacunes de ces trois plates-formes, nous aurons une interface différente
-et adaptée à la résolution et aux fonctionnalités.\\
-Pour chacun des types de périphériques, nous aurons un programme différent,
-codé dans le langage propre à celui-ci, faisant appel à notre service Ocsigen
-\textit{via} l'API développeurs détaillée par la suite.\\
-En tout, nous aurons :
-\begin{itemize}
-  \item 3 services différents en Ocsigen ;
-  \item 6 application mobiles différentes, dans leurs languages respectifs.
-\end{itemize}
-
-On pourra donc dire que « La Vie Est Un Jeu » sera \textbf{ultra-portable}.
 
 %% --------------------------------------------------------------------- %%
 
@@ -470,23 +422,16 @@ On pourra donc dire que « La Vie Est Un Jeu » sera \textbf{ultra-portable}.
 
 \section{Technologie et portabilité de la base de données}
 
-Pour la base de données, nous utilisons un service qui nous est imposé par
-\textbf{Ocsigen}, la technologie que nous utilisons pour tout notre projet.\\
-Ce service s'appelle \textbf{Macaque}. Il propose une approche fonctionnelle
-et fortement typée de gestion de bases de données.\\
-Ce service est basé sur PostgreSQL et il est possible d'intéragir avec la
-base de données \textit{via} d'autres systèmes utilisant PostgreSQL.
-Cependant, l'interaction avec la base de données depuis notre service Ocsigen
-ne peut se faire qu'avec Macaque.\\
+Pour la base de données, nous utilisons un service de base de donnee non-relationnelle de type NoSQL developpe par la societe \textbf{10gen}.\\
+Ce service s'appelle \textbf{MongoDB}.\\
+Il est basé sur la structure de donnees JavaScript Object Notation (JSON) et est reconnu pour ses performances et sa scalabilite.\\
 \\
 Afin de pouvoir utiliser d'autres types de bases de données en cas de besoin
 pour la suite, nous comptons proposer des convertisseurs de base de données.\\
-Nous proposerons un convertisseur de PostgreSQL vers MySQL dans un autre langage et
-d'autres convertisseurs si le besoin s'en fait sentir.
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=13cm]{img/macaque.png}
+    \includegraphics[width=13cm]{img/mongodb.png}
   \end{center}
 \end{figure}
 
@@ -542,9 +487,9 @@ Afin de communiquer et d’échanger sur le projet, notre groupe de travail s’
 \section{Architecture technique}
 
 \begin{itemize}
-  \item Le projet se base sur un environnement web en OCaml, donc la composante principale est le serveur web \href{http://ocsigen.org/}{Ocsigen}.
+	\item Le projet se base sur un client web en OCaml utilisant \href{http://ocsigen.org/}{Ocsigen} ainsi que sur un serveur en \href{http://nodejs.org}{NodeJS}.
   \item Le projet s’appuiera également sur \href{http://ocsigen.org/js\_of\_ocaml/}{js\_of\_ocaml}, un outil de compilation d’OCaml en JavaScript.
-  \item Il gèrera une base de données grâce à \href{http://ocsigen.org/macaque/}{Macaque}, un autre projet initié par l’INRIA.
+  \item Il gèrera une base de données grâce à \href{http://www.mongodb.org}{MongoDB}, un projet initié par 10gen.
 \end{itemize}
 
 Pour plus de détails, reportez-vous au chapitre sur les technologies utilisées.
