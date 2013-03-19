@@ -314,9 +314,10 @@ L'API permettrait d'offrir aux développeurs un accès à l'essentiel des foncti
 
 \section{Ocsigen, serveur web et puissant framework en OCaml}
 
-La technologie utilisées s'intitule « Ocsigen ». C'est un serveur web et un puissant framework entièrement conçu en OCaml.\\
+L'une des deux technologies utilisées s'intitule « Ocsigen ». C'est un serveur web et un puissant framework entièrement conçu en OCaml.\\
+Nous n'allons utiliser que sa partie framework dans le cadre de ce projet.\\
   \\
-La programmation fonctionnelle est complètement adaptée au domaine du web comme le décrivent de nombreux articles sur Internet, tels que celui-ci :\\
+La programmation fonctionnelle est complètement adaptée au domaine du Web comme le décrivent de nombreux articles sur Internet, tels que celui-ci :\\
 \url{http://www-lipn.univ-paris13.fr/~loddo/funding/projet-hyper-learning.pdf}\\
 \\
 Son typage fort résout de nombreuses problématiques de sécurité, comme celles que l'on peut rencontrer en PHP par exemple.\\
@@ -363,22 +364,7 @@ Pour nous, c'est idéal. Nous savons qu'en choisissant cette technologie, nous d
 
 \subsection{Serveur}
 
-Ocsigen est une technologie très récente. Le développement des divers services a
-commencé il y a bien des années mais la mise en commun de chacun et la sortie
-finale permettant de l'utiliser en production date de mars 2012 avec la sortie
-de la version 2.0.\\
-\\
-De ce fait, le serveur Ocsigen et tous ses modules associés ne fonctionne
-pour l'instant que sur très peu de distributions. Il fontionne sur certaines
-distributions Linux connues telles que Debian, Ubuntu ou Arch Linux. À ce jour, 
-il ne fonctionne pas sur Microsoft Windows, Apple Mac OS X ou encore sur les 
-distributions BSD.\\
-\\
-Notre serveur n'est donc pas portable.
-
-\subsection{Client}
-
-Pour le client, apres avoir change notre idee de depart qui etait l'utilisation d'Ocsigen, nous avons decide de miser sur la scalabilite et la performance en utilisant NodeJS.\\
+Pour le serveur, après avoir changé notre idée de départ qui était l'utilisation d'Ocsigen, nous avons decidé de miser sur la scalabilité et la performance en utilisant \textbf{NodeJS}.\\
 \\
 
 
@@ -388,29 +374,83 @@ Pour le client, apres avoir change notre idee de depart qui etait l'utilisation 
   \end{center}
 \end{figure}
 
-Ce framework en JavaScript nous offre la possibilite d'etendre facilement le service sur de nombreux serveurs sans devoir tout repenser.\\
+Ce système d'application en JavaScript nous offre la possibilité d'etendre facilement le service sur de nombreux serveurs sans devoir tout repenser.\\
 
-Contrairement a Ocsigen qui est relativement nouveau et en pleine expansion, NodeJS est un framework ayant fait ses preuves et utilise par des grands noms de l'Internet tels que Twitter.\\
-Il permet de gerer une grosse charge d'informations et de nombreux utilisateurs.\\
+Contrairement à Ocsigen qui est relativement nouveau et en pleine expansion, NodeJS est un framework ayant fait ses preuves et utilisé par des grands noms de l'Internet tels que Twitter.\\
+Il permet de gérer une grosse charge d'informations et de nombreux utilisateurs.\\
 
-L'equipe est egalement plus experimentee en JavaScript qu'en OCaml. Cela reduit donc considerablement le temps d'apprentissage d'une nouvelle technologie. Il est egalement plus facile de trouver des developpeurs JavaScript que des developpeurs OCaml.\\
+Notre équipe est également plus experimentée en JavaScript qu'en OCaml. Cela reduit donc considérablement le temps d'apprentissage d'une nouvelle technologie. Il est également plus facile de trouver des développeurs JavaScript que des développeurs OCaml.\\
 
+NodeJS étant disponible pour les principaux systèmes d'exploitation (Linux, Windows, Mac OS X), notre serveur sera donc portable.
 
-%% --------------------------------------------------------------------- %%
+\subsection{Client}
 
-\chapter{Description de la base de données}
+Nous avons décidé de rendre notre service également ultra-portable côté client.\\
+\\
+Le choix de l'utilisation d'Ocsigen côté client est évident puisque cette 
+technologie est adaptée aux trois cas d'utilisation que représentent l'accès
+\textit{via} un poste fixe, un smartphone ou encore une tablette. Dans le cadre
+de la version web mobile, Ocsigen gère de plus de nombreuses fonctionnalités 
+spécifiques aux terminaux mobiles :
+\begin{itemize}
+  \item tactile (toucher simple, toucher glissé, ...) ;
+  \item géolocalisation ;
+  \item orientation ;
+  \item appareil photo ;
+  \item ...
+\end{itemize}
 
-\section{Description des tests de premier niveau}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=8cm]{img/navigateurs.png}
+  \end{center}
+\end{figure}
+
+Notre service est garanti d'être utilisable sur trois types de plates-formes.
 
 \begin{itemize}
-  \item Création de compte.
-  \item Restriction d’accès par cercles.
-  \item Listing des achievements déjà présents dans la base de données.
-  \item Sélection d’achievements parmi ceux disponibles.
-  \item Pondération des achievements.
-  \item Classement : tests des différents algorithmes de notation.
-  \item Restriction des achievements pour une catégorie d’utilisateurs (ceux de niveau 3 ne seront pas accessibles au moins de 18 ans et ceux de niveau 2 aux moins de 14 ans).
+  \item Navigateurs internet classiques
+    \begin{itemize}
+      \item Google Chrome
+      \item Mozilla Firefox
+      \item Internet Explorer
+      \item Apple Safari
+      \item Opera
+    \end{itemize}
+  \item Terminaux mobiles format téléphone
+    \begin{itemize}
+      \item Android
+      \item iOS
+      \item Windows Mobile
+      \item BlackBerry
+    \end{itemize}
+  \item Tablettes
+    \begin{itemize}
+      \item iPad
+      \item Tablette Android
+    \end{itemize}
 \end{itemize}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=13cm]{img/mobiles.jpg}
+  \end{center}
+\end{figure}
+
+Pour chacunes de ces trois plates-formes, nous aurons une interface différente
+et adaptée à la résolution et aux fonctionnalités.\\
+Pour chacun des types de périphériques, nous aurons un programme différent,
+codé dans le langage propre à celui-ci, faisant appel à notre service Ocsigen
+\textit{via} l'API développeurs détaillée par la suite.\\
+En tout, nous aurons :
+\begin{itemize}
+  \item 3 services différents en Ocsigen ;
+  \item 6 application mobiles différentes, dans leurs languages respectifs.
+\end{itemize}
+
+On pourra donc dire que « La Vie Est Un Jeu » sera \textbf{ultra-portable}.
+
+%% --------------------------------------------------------------------- %%
 
 \section{Schéma de la base de données}
 
@@ -422,9 +462,9 @@ L'equipe est egalement plus experimentee en JavaScript qu'en OCaml. Cela reduit 
 
 \section{Technologie et portabilité de la base de données}
 
-Pour la base de données, nous utilisons un service de base de donnee non-relationnelle de type NoSQL developpe par la societe \textbf{10gen}.\\
+Pour la base de données, nous utilisons un service de base de données non-relationnelle de type NoSQL développé par la société \textbf{10gen}.\\
 Ce service s'appelle \textbf{MongoDB}.\\
-Il est basé sur la structure de donnees JavaScript Object Notation (JSON) et est reconnu pour ses performances et sa scalabilite.\\
+Il est basé sur la structure de données JavaScript Object Notation (JSON) et est reconnu pour ses performances et sa scalabilité.\\
 \\
 Afin de pouvoir utiliser d'autres types de bases de données en cas de besoin
 pour la suite, nous comptons proposer des convertisseurs de base de données.\\

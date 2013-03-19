@@ -103,6 +103,7 @@
 \revision{2.0}{Lepage Barbara}{Updated Summary and redesign of global}{01/07/2012}
 \revision{2.1}{Louvigny Guillaume}{Resumption of mobile applications and some minor corrections}{05/07/2012}
 \revision{2.2}{Corsin Simon}{Corrected translations}{05/07/2012}
+\revision{2.3}{Glorieux François}{Updated with new technologies}{19/03/2013}
 
 \listofrevisions
 
@@ -200,7 +201,7 @@ The site will be multilingual, so open to internationalization.
 
 \section{The Website}
 
-\subsecti on{Overview of the homepage before login}
+\subsection{Overview of the homepage before login}
 
 The user will see first a slide show highlighting some "Achievements", arranged by date of publication and popularity, and the various functions of the site. This slide will aim to encourage the user to register.\\
 
@@ -311,7 +312,7 @@ The API would provide developers access to the essential features of the site. W
 
 \section{Ocsigen, web server and powerful framework in OCaml}
 
-The technology used is called ``Ocsigen'' is a web server and a powerful framework entirely in OCaml.\\
+One of the two used technologies is called ``Ocsigen'' is a web server and a powerful framework entirely in OCaml.\\
   \\
 Functional programming is completely adapted to the field of web as described in numerous articles on the internet, like this: \\
 \url{http://www-lipn.univ-paris13.fr/~loddo/funding/projet-hyper-learning.pdf} \\
@@ -360,24 +361,28 @@ For us, it's ideal. We know that by choosing this technology, we will spend much
 
 \subsection{Server}
 
-Ocsigen is a very new technology. The development of various services
-started many years ago but the pooling of each output and
-for final production use as of March 2012 with the release
-version 2.0.\\
+Pour le serveur, après avoir changé notre idée de départ qui était l'utilisation d'Ocsigen, nous avons decidé de miser sur la scalabilité et la performance en utilisant \textbf{NodeJS}.\\
 \\
-Therefore, the server Ocsigen and all its associated modules not working
-for now only on very few distributions. It fontionne on some
-distrubutions Linux known as Ubuntu, Debian or Arch Linux. To date 
-it does not work on Microsoft Windows, Apple Mac OS X or the 
-BSD distributions. \\
-\\
-We still decided to highlight innovation over
-the portability of our project. Our server is not portable.
+
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=13cm]{img/nodejs.png}
+  \end{center}
+\end{figure}
+
+This software system in JavaScript offers us the possibility to easily extend the service on a lot of servers without having to re-think everything.\\
+
+Unlike Ocsigen, new and in full expansion, NodeJS is a framework which has proven and used by some big names of the Internet, like Twitter.\\
+He allows to manage a large amount of informations and users.\\
+
+Our team is also more experienced in JavaScript than in Ocaml. So it considerably reduces the learning time of a new technology. It's also easier to find JavaScript developpers than Ocaml ones.\\
+
+As NodeJS is available on the principal operating systems (Linux, Windows, Mac OS X), our server will be portable.
 
 \subsection{Client}
 
-To overcome this disadvantage binding, we decided to make our
-Ultra portable client-side service.\\
+We decided to make a portable client-side service as well.\\
 \\
 The choice of using client-side Ocsigen évidante since this is 
 technology is adapted to three use cases that represent access
@@ -468,23 +473,15 @@ We can therefore say that ``La Vie Est Un Jeu'' is \textbf{ultra-portable}.
 
 \section{Technology and portability of the database}
 
-For the database we use a service that we have imposed
-\textbf{Ocsigen}, the technology we use for our entire project.\\
-This service is called \textbf{Macaque}. It offers a functional approach
-and strongly typed management database.\\
-This service is based on PostgreSQL and it is possible to interact with the
-database with other systems using PostgreSQL.
-However, the interaction with the database since our Ocsigen
-can be done with macaque.\\
+For the database, we use a non-relational database service of NoSQL type developped by the \textbf{10gen} company.\\
+This service is titled \textbf{MongoDB}.\\
+It's based on the JavaScript Object Notation data structure (JSON) and is well-known for its performances and scalability.\\
 \\
-To use other types of data bases when needed
-for the future, we plan to offer converters database.\\
-We propose a PostgreSQL to MySQL converter in another language and
-the need for other converters.
+In order to use other database types if needed, we plan to propose some database converters.\\
 
-\begin{figure} [H]
+\begin{figure}[H]
   \begin{center}
-    \includegraphics[width = 13cm]{img/macaque.png}
+    \includegraphics[width=13cm]{img/mongodb.png}
   \end{center}
 \end{figure}
 
@@ -540,10 +537,9 @@ To communicate and discuss the project, our working group relies on several tool
 \section{Technical Architecture}
 
 \begin{itemize}
-  \item The project is based on a Web environment in OCaml, so the main component is the web server
-        \href{http://ocsigen.org/}{Ocsigen}.
+  \item The project is based on a Web environment in OCaml using \href{http://ocsigen.org/}{Ocsigen} and on a server in \href{http://nodejs.org}{NodeJS}.
   \item The project will also build on \href{http://ocsigen.org/js_of_ocaml/}{js\_of\_ocaml}, a tool for compiling OCaml JavaScript.
-  \item It will manage a database using \href{http://ocsigen.org/macaque/}{Macaque}, another project initiated by INRIA.
+  \item It will manage a database using \href{http://www.mongodb.org}{MongoDB}, a project initiated by 10gen.
 \end{itemize}
 
 For details, see the chapter on the technologies used.
