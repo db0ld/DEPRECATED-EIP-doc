@@ -25,13 +25,12 @@ We use a template (available in the `doc/template` folder) to homogenize the gra
 * __CDC__ is the main document of the project. It contains all the specifications of the project
 * __150mots__ and __50mots__ are short description of the project
 * __EDE__ is a study of the existing competitors
-* [deprecated] RED is now part of the CDC
 
 ##### For developpers
 
 * __CDC__ is the main document of the project. It contains all the specifications of the project
 * __TD__ is the technical documentation, an overview of the project for new developers
-* __AA__ is the architectural document (databases, UML, case study...)
+* __DA__ is the architectural document (databases, UML, case study...)
 * __GANTT__ is a Gantt diagram of the whole project
 
 Some of the documents are not yet available in the repository because we are still working together
