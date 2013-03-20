@@ -1,0 +1,628 @@
+\documentclass{life-fr}
+
+\begin{document}
+
+\title{La Vie est un Jeu}
+\subtitle{Documentation Technique}
+
+\member{Lepage Barbara}{lepage.barbara@gmail.com}
+\member{Caradec Guillaume}{guillaume.caradec@gmail.com }
+\member{Corsin Simon}{simoncorsin@gmail.com }
+\member{Glorieux François}{fra.glorieux@gmail.com}
+\member{Klarman Nicolas}{nickoas@gmail.com}
+\member{Lassagne David}{david.lassagne@gmail.com}
+\member{Louvigny Guillaume}{guillaume@louvigny.fr}
+\member{Le-Cor Wilfried}{wilfried.lecor@gmail.com}
+\member{Lenormand Frank}{lenormf@gmail.com}
+\member{El-Outmani Youssef}{youssef.eloutmani@gmail.com}
+
+\summary
+{
+  Résumé CONFIDENTIEL des composants techniques du projet destiné aux développeurs
+}
+
+\maketitle
+
+%% --------------------------------------------------------------------- %%
+
+\chapter*{CONFIDENTIEL}
+{
+  Ce document est CONFIDENTIEL et interne au projet «~La Vie Est Un Jeu~».\\
+  \\
+  Sauf autorisation exceptionnelle, les seuls personnes autorisées à le lire
+  sont les membres officiels actuels du projet ainsi que l'équipe des
+  professeurs du laboratoire des EIP (Epitech Innovative Projects) à Epitech.\\
+  \\
+  Les seules personnes habilitées à donner une autorisation exceptionelle
+  ou à partager ce fichier sont les chefs de projets du projet «~La Vie
+  Est Un Jeu~».
+}
+
+%% --------------------------------------------------------------------- %%
+
+\authorspage
+
+%% --------------------------------------------------------------------- %%
+
+\chapter*{Résumé}
+{
+  « La Vie Est Un Jeu » propose des applications mobiles, tablettes et
+  web pour transformer votre quotidien en un jeu dans lequel vous vous
+  défiez avec des objectifs et des badges en récompense.\\
+  Notre Cahier Des Charges donne toutes les informations supplémentaires.\\
+  \\
+  Les développeurs sont réparties en équipes au sein du groupe.\\
+  Nous utilisons un certain nombre d'outils d'organisation regroupés sur
+  \href{http://life.paysdu42.fr/}{un portail}, notamment des agendas, des
+  réunions hebdomadaires, des dépôts Gitub et des ``issues'' Github pour gérer
+  les tâches.\\
+  \\
+  Les équipes de développeurs correspondent aux différents projets constituant
+  notre projet :\\
+  \begin{description}
+    \item [Web service respectant une API] :\\
+      Ce web service est utilisé par les clients mobiles, tablettes, web et
+      externes pour manipuler la base de données. Il est développé avec
+      \textbf{Javascript}, \textbf{Node.JS} et \textbf{MongoDB}.
+    \item [Applications mobiles et tablettes] :\\
+      Ces applications sont disponibles sur Android, iOs et Windows Phone
+      grâce à la technologie \textbf{Mono}.
+    \item [Site Web] :\\
+      Le site web est utilisable sur mobile, tablette ou ``desktop''. Il
+      est développé avec \textbf{Ocsigen} en \textbf{OCaml}.
+    \item [Documentation] :\\
+      De nombreuses documentations parsement notre projet, comme les
+      documentations dites ``globales'' (demandées par le lab EIP) en
+      \textbf{LaTeX}, ``internes'' (correspondant aux dépôts) en
+      \textbf{Markdown} ou ``dans le code'' utilisant \textbf{Doxygen}.
+  \end{description}
+
+  \vspace{10pt}
+  Cette documentation ne suffit pas à elle-seule, les développeurs
+  doivent prendre le temps de lire toutes les documentations liées.
+}
+
+%% --------------------------------------------------------------------- %%
+
+\chapter*{Informations du document}
+
+\rowcolors{1}{white}{lightgray}
+\begin{tabular}{ | m{5cm} | m{10cm} | }
+  \hline
+  \textbf{Type du document} & Documentation Technique\\ % to change
+  \hline
+  \textbf{Titre complet du document} & Documentation Technique «~La Vie Est Un Jeu~» pour nouveaux développeurs\\ % to change
+  \hline
+  \textbf{Mots clés} & «~technique~», «~développeur~», «~API~», «~lavieestunjeu~»\\ % to change
+  \hline
+  \textbf{Nombre de pages} & \ref{TotPages} \\
+  \hline
+  \textbf{Nom du groupe} & La Vie Est Un Jeu\\
+  \hline
+  \textbf{Responsable} & Chef de groupe : Barbara Lepage\\
+  \hline
+  \textbf{Membres du groupe} & Voir page de garde\\
+  \hline
+  \textbf{Auteurs} & Membres du groupe, voir page de garde\\
+  \hline
+  \textbf{Contact} & lavieestunjeu@googlegroups.com\\
+  \hline
+  \textbf{Révision actuelle} & 1.0\\ % to change
+  \hline
+  \textbf{Site vitrine} & \url{http://eip.epitech.eu/2014/lavieestunjeu/}\\
+  \hline
+  \textbf{Site officiel} & Non disponible\\
+  \hline
+\end{tabular}
+
+%% --------------------------------------------------------------------- %%
+
+\chapter*{Table des révisions}
+
+\revision{0.1}{Lepage Barbara}{Mise en page}{15/03/2013}
+\revision{0.2}{Lepage Barbara}{Introduction}{15/03/2013}
+\revision{0.3}{Lepage Barbara}{Outils et pré-requis}{15/03/2013}
+\revision{0.4}{Lepage Barbara}{API}{15/03/2013}
+\revision{0.5}{Lepage Barbara}{Applications mobiles et tablettes}{20/03/2013}
+\revision{0.6}{Lepage Barbara}{Site web}{20/03/2013}
+\revision{0.7}{Lepage Barbara}{Documentation}{20/03/2013}
+\revision{0.8}{Lepage Barbara}{Conclusion}{20/03/2013}
+\revision{0.9}{Lepage Barbara}{Résumé du document}{20/03/2013}
+\revision{1.0}{Lepage Barbara}{Première version}{20/03/2013}
+\listofrevisions
+
+%% --------------------------------------------------------------------- %%
+\newpage
+
+\tableofcontents
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{Introduction}
+
+Ce document s'adresse aux nouveaux développeurs rejoignant l'équipe de
+développement du projet «~La Vie Est Un Jeu~».\\
+Nous présumons que les lecteurs de ce document ont déjà pris connaissance
+du document ``Cahier Des Charges'' et ont des bases en programmation.\\
+\\
+Notre application se décline en plusieurs composants :
+\begin{itemize}
+  \item Une API publique développeur
+  \item Des applications mobiles et tablettes
+  \item Un site web
+\end{itemize}
+Il n'est pas nécéssaire pour vous de lire l'intégralité du document
+si vous ne participez qu'à un des composants, mais nous le recommendons
+afin d'être en phase avec le reste de l'équipe et avoir une vision globale
+du projet.\\
+\\
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{Outils et pré-requis}
+
+\section{Portail}
+
+Comme nous sommes de nombreux développeurs, nous nécessitons une organisation
+exemplaire pour mener à bien notre projet. Pour cela, nous utisons un portail
+qui regroupe tous nos outils.\\
+\\
+Le portail est disponible à l'URL suivante :
+\url{http://life.paysdu42.fr/}\\
+Il est nécessaire pour tous les développeurs de l'équipe de s'y rendre tous
+les jours de travail sur le projet.\\
+\\
+Les sources du portail sont disponibles à l'URL suivante :
+\url{https://github.com/LaVieEstUnJeu/Internal-Tools}\\
+Plus d'informations sur les dépôts dans la partie ``Sources des projets''.
+
+\subsection{Organisation}
+
+Les outils que nous utilisons sont tous sur le portail, mais aller plus
+loin dans leur utilisation permet plus d'efficacité. Nous établissons
+un bilan des tâches en cours, en créons de nouvelles ou étendons au
+besoin les dates limites.
+
+\subsubsection{Agenda}
+
+Notre agenda est hebergé par \textbf{Google Calendar}. Il est fortement
+recommendé de l'ajouter dans votre propre système d'agenda. Le format
+ICAL que propose Google est compatible avec la plupart des gestionnaires
+d'agenda du marché.\\
+\\
+Nous utilisons également un agenda global qui correspond à notre
+diagramme de GANTT.
+
+\subsubsection{Réunions régulières}
+
+Nous organisons des réunions régulières, notamment une réunion technique
+par semaine, une réunion brainstorm sur le contenu de l'application par semaine et
+des réunions mensuelles ou bi-mensuelles organisées par le lab EIP
+(communication, suivis, soutenances techniques, soutenance communication).\\
+\\
+Pendant la \textbf{réunion technique hebdomadaire}, nous abordons nos
+avancements respectifs sur le projet puis nous nous séparons par
+équipes pour plus d'efficacité.
+
+\subsubsection{Communication}
+
+Notre \textbf{mailing-list} \href{mailto:lavieestunjeu@googlegroups.com}{lavieestunjeu@googlegroups.com}
+est notre principal outil de communication (en français), mais tout
+ce qui concerne le côté technique de notre projet DOIT être sur les
+``issues'' GitHub (voir ci-dessous) et rédigé en anglais.\\
+\\
+Nous communiquons également régulièrement sur GTalk, IRC, par téléphone
+et Google Hangout.
+
+\subsubsection{Serveur de développement}
+
+Comme certaines technologies que nous utilisons, notamment Ocsigen, ne
+sont pas portables et sont très difficiles à installer, nous utilisons
+un serveur de développement commun sur lequel sont installés les
+logiciels et librairies nécessaires aux développeurs.
+
+\section{Sources des projets}
+
+\subsection{Git}
+
+Tous nos projets sont versionnés en utilisant le gestionnaire de version
+\textbf{Git}.\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/Gestion_de_versions}{la page Wikipédia
+gestion de version}
+et \href{http://git-scm.com/}{le site officiel Git}.
+
+\subsection{GitHub}
+
+L'hébergeur de nos dépôts Git s'appelle \textbf{GitHub}. Ce service
+propose des dépôts publics gratuits et des dépôts privés payants,
+ainsi que de nombreuses autres fonctionnalités.\\
+\\
+Les fonctionnalités principales que nous utilisons sont les suivantes :
+\begin{description}
+  \item [Organizations] : \\
+    Les ``organizations'' GitHub permettent de regrouper des dépôts
+    sur une même page et de gérer des équipes.\\
+    Notre ``organization'' : \url{https://github.com/LaVieEstUnJeu}.
+  \item [Issues] : \\
+    Les ``issues'' peuvent être comparés à des ``tickets''. Ils permettent
+    de répertorier et discuter les fonctionnalités en cours de développement,
+    les bogues, de poser des questions, de proposer des nouvelles fonctionnalités
+    ou de gérer les ``pull-request'' (demandes extérieures d'ajout de
+    modifications sur le dépôt principal).\\
+\end{description}
+
+\subsection{Accès aux dépôts}
+
+La majorité de nos dépôts est privée. Pour y avoir accès, il faut être membre
+de l'équipe de développement du projet en question.\\
+\\
+Si vous n'êtes pas encore membre des équipes vous permettant d'avoir accès
+aux dépôts, faites une demande au plus vite.\\
+En attendant, afin de permettre aux nouveaux développeurs n'ayant pas encore
+accès à nos dépôts (et au lab EIP) de parcourir le contenu de nos dépôts,
+nous avons créer un compte utilisateur \textbf{lavieestunjeu-watcher}. Le
+mot de passe de ce compte est ``2h\&1H52Z''.\\
+\\
+Les équipes actuelles sont :
+\begin{description}
+  \item [Watchers] : \\
+    Personnes extérieures au projet ayant une autorisation exceptionnelle
+    pour \textbf{voir} certains dépôts (exemple : jury dans le cadre des
+    EIP, conseillers officiels, lab EIP).
+  \item [Web Service API] : \\
+    Développeurs du Web Service respectant l'API.
+  \item [Mobile] : \\
+    Développeurs des applications mobiles et tablettes.
+  \item [Website] : \\
+    Développeurs du client web.
+\end{description}
+
+\subsection{Règles d'utilisation des dépôts}
+
+\subsubsection{Règles générales}
+
+\begin{itemize}
+  \item Le contenu des dépôts privés est confidentiel et ne doit en
+    aucun cas être diffusé.
+  \item Les contenu des dépôts publics sont protégés par leurs licences
+    open-source respectives, présentes directement dans les dépôts.
+  \item Afin de faciliter l'insertion de nouveaux membres de nationalités
+    différentes, nous utilisons l'\textbf{anglais} sur ces dépôts.\\
+    Aucun mot français ou d'une autre langue n'est toleré, que ce soit
+    dans les sources, dans les ``issues'' ou dans les messages de ``commit''.
+  \item Chaque dépôt et chaque sous-projets dans les dépôts doit contenir
+    un fichier \textbf{README}. Voir section ``Documentation'' pour
+    plus d'informations.
+\end{itemize}
+
+\subsubsection{``Commit''}
+
+\begin{itemize}
+  \item Les commits répondant à une ``issue'' doivent la citer avec un ``\#''
+  \item Les messages de commit doivent toujours être explicites
+  \item Il est recommendé de segmenter les messages de commit avec un
+    résumé de moins de 50 lettres suivi de deux retours à la ligne
+    et d'une description complète (souvent une liste)
+  \item Un commit doit contenir une et une seule fonctionnalité
+  \item Dans le cas où les dépôts contiennent plusieurs projets,
+    il est impératif de mettre un ``tag'' au début du message de commit\\
+    Exemple : ``[Portal] Add labels and sub-labels in the menu''
+  \item Les ``diff'' de commit ne doivent jamais contenir de lignes
+    hors-sujet.
+\end{itemize}
+
+\subsubsection{``Issues''}
+
+\begin{itemize}
+  \item Il doit toujours y avoir une ``issue'' ouverte pour chaque tâche en cours
+  \item Les issues contiennent des ``tags'' :
+    \begin{itemize}
+      \item task
+      \item bug
+      \item bonus
+      \item question
+    \end{itemize}
+    \item Nous n'utilisons pas d'issues dans les dépôts publics
+\end{itemize}
+
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{API Publique développeur}
+
+\section{L'API}
+
+L'interraction entre les données que nous manipulons et nos services est
+strictement définie par une API.
+
+\subsection{Spécifications}
+
+\subsubsection{Architecture REST}
+
+Cette API utilise le style d'architecture standardisé \textbf{REST}
+(``REpresentational State Transfer'').\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/Representational_State_Transfer}{la page Wikipédia}.
+
+\subsubsection{Formattage JSON}
+
+Les données publiées par l'API sont formattées en utilisant le format
+de données standardisé \textbf{JSON} (``JavaScript Object Notation'').\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://www.json.org/}{le site officiel}.
+
+\subsection{Documentation de l'API}
+
+Notre API évolue régulièrement, contrairement à cette documentation, c'est
+pourquoi elle n'est pas directement reportée sur celui-ci.\\
+\\
+Elle est disponible sur un Google Document : \url{http://goo.gl/uxMoJ}.\\
+Lorsque notre service sera publié, l'API sera disponible sur notre site
+web.
+
+\section{Le Web Service}
+
+Nous proposons à nos utilisateurs un web service respectant l'API leur
+permettant de manipuler les données de nos services. Nos clients web et
+mobiles sont également basés sur ce Web Service pour la manipulation
+de données.\\
+\\
+Pour plus d'informations sur ce qu'est un Web Service, de nombreuses
+références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/Service_Web}{la page Wikipédia}.
+
+\subsection{Sources}
+
+\subsubsection{Languages de programmation}
+
+Notre Web Service est implémenté en \textbf{Javascript}
+avec le framework \textbf{Node.js}.\\
+\\
+Le choix de cette technologie est détaillé dans le cahier des charges.\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/JavaScript}{la page Wikipédia Javascript}
+et \href{http://nodejs.org/}{le site officiel Node.js}.
+
+\subsubsection{Dépôts}
+
+Le dépôt GitHub du Web Service : \url{https://github.com/LaVieEstUnJeu/API}\\
+Il est primordial de prendre conaissance des informations fournies dans le
+``README''.\\
+Plus d'informations sur les dépôts dans la partie ``Sources des projets''.
+
+\subsection{Base de données}
+
+Nous utilisons une base de donnée dite ``non relationelle'' appelée MongoDB.\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/NoSQL}{la page Wikipédia NOSQL} et
+\href{http://www.mongodb.org/}{le site officiel MongoDB}.\\
+\\
+La base de données évolue au fil de l'avancement du projet et nous mettons
+à jour l'API régulièrement, tout au long de la phase de développement.\\
+\\
+Le schéma théorique de la base de donnée est disponible dans le document
+architecture du projet : \url{https://github.com/LaVieEstUnJeu/Doc/tree/master/doc/AA}\\
+\\
+La version actuelle - mais pas finale - de la base de donnée MongoDB est
+disponible sur le dépôt :
+\url{https://github.com/LaVieEstUnJeu/API/blob/master/public/models.js}.
+
+\section{Utilisation du Web Service}
+
+Notre Web Service est utilisé par nos clients mobiles et webs et
+potentiellement par d'autres développeurs par le futur. Pour cette raison,
+nous avons décidé de publier le code source de l'utilisation de l'API
+puis par la suite de proposer d'autres exemples afin que les utilisateurs
+soient guidés au mieux.\\
+\\
+Le dépôt \textbf{public} de l'utilisation de l'API :
+\url{https://github.com/LaVieEstUnJeu/Public-API/}\\
+Il est primordial de prendre conaissance des informations fournies dans le
+``README'' et tous les autres ``README'' disponibles pour chaques exemples
+fournis.\\
+Plus d'informations sur les dépôts dans la partie ``Sources des projets''.\\
+\\
+Le code source de ces exemples n'est disponible QUE sur ce dépôt afin de
+ne pas faire de dupplication. Pour cette raison, les dépôts utilisant ce
+code doivent y faire appel lors de leur installation.
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{Applications mobiles et tablettes}
+
+\section{Supports et technologie}
+
+Nos applications sont disponibles sur mobiles et tablettes, sur plusieurs
+systèmes d'exploitation.\\
+\\
+Afin de minimiser la quantité de code produite et ainsi limiter la
+quantité de bogues potentiels, nous utilisons la technologie \textbf{Mono}
+en C\#.\\
+En particulier, nous utilisons :
+\begin{itemize}
+  \item Code natif C\# pour \textbf{Windows Phone 7}
+  \item Mono.android pour \textbf{Android}
+  \item MonoTouch pour \textbf{iOs}
+\end{itemize}
+
+Le choix de cette technologie est détaillé dans le cahier des charges.\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://msdn.microsoft.com/en-us/vstudio/hh341490.aspx}{la documentation
+officielle C\#} et \href{http://www.mono-project.com/}{le site officiel Mono}.
+
+\section{Source}
+
+\subsection{Dépôts}
+
+Le dépôt GitHub des applications :
+\url{https://github.com/LaVieEstUnJeu/Applications}\\
+Plus d'informations sur les dépôts dans la partie ``Sources des projets''.
+
+\subsection{Tests unitaires de l'API}
+
+Le dépôt Applications propose également des tests unitaires pour l'implémentation
+côté client de l'API.
+
+\section{Design}
+
+Le design des vues ainsi que les déscriptif des fonctionnalités de celles-ci
+sont définis dans ce document CONFIDENTIEL :
+\url{http://goo.gl/oY9se}
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{Site Web}
+
+\section{Technologie}
+
+Le site web est développé avec \textbf{Ocsigen}, serveur et framework web
+en \textbf{OCaml}.\\
+\\
+Le choix de cette technologie est détaillé dans le cahier des charges.\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://ocaml.org/}{le site officiel OCaml} et
+\href{http://ocsigen.org/}{le site officiel Ocsigen}.\\
+\\
+Le code client et le code serveur sont développés
+avec la même technologie. Les vues sont ``responsives'', c'est à dire
+que l'affichage est automatiquement adapté pour une visualisation sur
+un environnement dit ``desktop'', ``mobile'' ou ``tablette''.
+
+\section{Dépôts}
+
+Le dépôt GitHub du site web :
+\url{https://github.com/LaVieEstUnJeu/Website}\\
+Il est primordial de prendre conaissance des informations fournies dans le
+``README''.\\
+Plus d'informations sur les dépôts dans la partie ``Sources des projets''.
+
+\section{URLs}
+
+Les URL sont définies sur le ``README'' :
+\url{https://github.com/LaVieEstUnJeu/Website#urls}
+
+\section{Design des vues}
+
+Le design des vues est défini dans cet album photo CONFIDENTIEL :
+\href{http://photos.db0.fr/?album=GLifeDesign?authkey=Gv1sRgCLmfvp7DmMK_hAE}{album}.
+
+\section{Fonctionnalités}
+
+Le descriptif des fonctionnalités sur les vues est défini dans le cahier
+des charges.
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{Documentation}
+
+Ce chapitre s'adresse aux rédacteurs techniques du projet.\\
+La section ``Dans le code'' s'adresse à tous les développeurs.
+
+\section{Documentation globales du projet}
+
+\subsection{Sources}
+
+Le dépôt GitHub des documentations globales du projet :
+\url{https://github.com/LaVieEstUnJeu/Applications}\\
+Il est primordial de prendre conaissance des informations fournies dans le
+``README''.\\
+Plus d'informations sur les dépôts dans la partie ``Sources des projets''.
+
+\subsection{Étapes et technologies}
+
+Nous documentons nos projets selon les désirs du lab EIP et ajoutons
+également d'autres documentations nous semblant utiles.
+
+\subsubsection{Rédaction}
+
+Au besoin, nous rédigons le contenu de nos documents en utilisant un
+outil collaboratif (Google Documents/Drive) nous permettant de
+travailler à plusieurs et à distance.\\
+\\
+Si une seule personne travaille sur le document, il n'est pas
+nécessaire d'utiliser cet outil et nous utilisons directement les
+outils de mise en page.
+
+\subsubsection{Mise en page}
+
+Nous mettons en page nos documents en utilisant \textbf{LaTeX},
+un language de balisage (communément appelé ``markup language'' en anglais).\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/Langage_de_balisage}{la page wikipédia} et
+\href{http://www.latex-project.org/}{le site officiel LaTeX}.
+
+\section{Documentations directement liées aux dépôts}
+
+Chaque dépôt et chaque sous-projets dans les dépôts doit contenir
+une documentation dans un fichier ``README''.
+
+\subsection{Contenu}
+
+Ce fichier doit contenir :
+\begin{itemize}
+  \item Le contenu, le but du dépôt/projet
+  \item Les dépendances du projet
+  \item Une manière simple et rapide d'installer, compiler, lancer, tester
+  \item L'arborescence et l'emplacement des fichiers principaux
+  \item Une explication destinées aux personnes qui rejoignent le projet
+  \item Le ``coding-style'' (ou convention de codage) du projet
+  \item Une F.A.Q
+  \item Le copyright (pour les dépôts open-source)
+\end{itemize}
+
+\subsection{Sources}
+
+Ces documentations doivent être rédigé en utilisant le language
+de balisage \textbf{Markdown} (recommendé) ou un autre
+language supporté par GitHub.\\
+\\
+La liste des languages supportés par GitHub et les liens vers
+leurs documentations sont disponibles sur
+\href{https://github.com/github/markup#markups}{la documentation GitHub}.
+
+\section{Dans le code}
+
+Il est primordial de commenter son code et de le documenter au mieux.
+Pour cela, il faut garder en tête que d'autres personnes auront besoin
+de repasser derrière pour le lire, le comprendre et le modifier et qu'ils
+doivent pouvoir le faire sans difficulté et sans l'aide du developpeurs
+original.\\
+\\
+Nous recommendons de manière générale d'utiliser la syntaxe \textbf{Doxygen}
+pour générer automatiquement une documentation, mais chaque projet
+a ses propres conventions de codage définies dans les ``README''.\\
+\\
+De nombreuses références existent sur l'Internet pour ces notions, notamment
+\href{http://fr.wikipedia.org/wiki/R%C3%A8gles_de_codage}{la page Wikipédia
+conventions de codage} et \href{http://www.doxygen.org/}{le site officiel Doxygen}.
+
+%% --------------------------------------------------------------------- %%
+
+\chapter{Aller plus loin}
+
+Ce document est un guide simple permettant aux nouveaux développeurs
+de rejoindre le projet sans difficulté, mais il ne constitue pas à lui
+seul une documentation complète.\\
+\\
+Il est donc essentiel qu'en tant que développeurs, vous preniez le temps
+de vous documenter sur les projets sur lesquels vous travaillez en utilisant
+les liens proposés dans ce document et en faisant vos recherches personnelles.\\
+\\
+Il est également primordial pour la bonne cohésion du groupe de communiquer
+au sein des équipes. Pour cette, la participation aux réunions est obligatoire
+et permet de poser des questions ou d'y répondre.\\
+\\
+Pour finir, il est important que vous preniez le temps, comme l'ont fait
+et le feront toute l'équipe, de rédiger les documentations de vos projets
+respectifs et que vous les teniez à jour.
+
+\end{document}
