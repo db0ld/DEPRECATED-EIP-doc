@@ -1,5 +1,5 @@
 # List the pdf's to build. foo.tex will produce foo.pdf
-TARGETS = 2014_USER_FR_lavieestunjeu.pdf
+TARGETS = 2014_UD1_FR_lavieestunjeu.pdf
 
 # List the files included in the slides
 DEPS =
