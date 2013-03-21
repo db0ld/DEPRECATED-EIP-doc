@@ -71,23 +71,6 @@
 	\hline
 \end{tabular}
 
-\chapter*{Table des révisions}
-
-\revision{0.1}{Barbara Lepage}{Rappel de l'EIP}{11/07/2012}
-\revision{0.2}{Guillaume Louvigny}{Architecture, buts et contraintes (objectifs)}{11/07/2012}
-\revision{0.3}{Guillaume Louvigny}{Architecture, buts et contraintes (contraintes fonctionnelles)}{11/07/2012}
-\revision{0.4}{Guillaume Louvigny}{Architecture, buts et contraintes (contraintes non-fonctionnelles)}{11/07/2012}
-\revision{0.5}{David Lassagne}{Cas d'utilisation général, Fonctions Standard Utilisateurs}{11/07/2012}
-\revision{0.6}{David Lassagne}{Cas d'utilisations détaillés, Inscription, login}{11/07/2012}
-\revision{0.7}{David Lassagne}{Vues processus}{11/07/2012}
-\revision{0.8}{Barbara Lepage}{Vue déploiement}{11/07/2012}
-\revision{0.9}{David Lassagne}{Vue données}{11/07/2012}
-\revision{0.11}{Youssef El-Outmani}{Qualité}{11/07/2012}
-\revision{0.12}{Barbara Lepage}{Schéma d'introduction}{11/07/2012}
-\revision{0.14}{Guillaume Louvigny}{Mise en page et correction mineures}{12/07/2012}
-\revision{1.0}{Wilfried Le Cor}{Document final de rendu (Documentation Utilisateur)}{15/03/2013}
-\listofrevisions
-
 \newpage
 
 \tableofcontents
@@ -164,29 +147,11 @@ Espace collaboratif sur lequel les utilisateurs sont invités à rédiger des do
 
 %% --------------------------------------------------------------------- %%
 
-\section{Pré-requis et informations sur le projet}
-
-\subsection{Destinataires du projet}
-
-Qui que vous soyez, si vous avez des passions susceptibles d'être partagées avec d'autre personnes, nous vous offrons la possibilité de rencontrer des gens qui peuvent vous apporter des petits défis et ainsi vous amener à réaliser des actions que vous n'auriez peut-être pas envisagé.
-
-Les utilisateurs ciblés par le projet sont très nombreux. Il suffit qu'une personne ait un centre d'intérêt ou une passion couvert(e) par le site pour qu'elle ait une raison de s'y inscrire.\\
-
-Le site comme les applications mobiles seront conçus en vue d'une internationalisation étendue.
-
-\subsection{Utilisation du projet, rapport à l'existant}
-
-Pour les utilisateurs finaux, le projet sera composé d'un site web et de plusieurs applications mobiles incluant Android, iOS et Windows Phone. Pour les développeurs tiers, une API sera mise en service, permettant la création de nouveaux usages.\\
-
-Le projet a été pensé de façon à pouvoir répondre à un ensemble de fonctionnalités non présentes dans les projets déjà existants. Ces fonctionnalités ne sont pas combinées ou présentes sur les sites concurrents. En effet, nous tenons à mettre en place une plate-forme suffisamment ludique pour être visitée au quotidien, sans pour autant négliger l’aspect social permettant au visiteur de discuter de ses loisirs avec son réseau et de pouvoir partager aisément ses expériences à travers photos et vidéos.\\
-
-\newpage
-
 \subsection{But final du projet}
 
-Le projet a pour but de créer une communauté d'utilisateurs autour d'un système d'achievements, directement lié à la vie quotidienne, aux passions ou à la vie professionnelle.\\
+Le projet a pour but de créer une communauté d'utilisateurs autour d'un système d'achievements, directement lié à la vie quotidienne, aux passions ou à la vie professionnelle, ceci dans le but de vous permettre de trouver des gens qui partagent éventuellement des passions et intérets communs avec vous.\\
 
-Les utilisateurs ciblés sont très nombreux. En théorie, toute personne ayant un centre d'interêt ou une passion est une cible.\\
+Vous êtes très nombreux ! En théorie, toute personne ayant un centre d'interêt ou une passion est une cible.\\
 
 À plus long terme, des partenariats commerciaux permettront de cibler des marques et des lieux.\\
 
@@ -200,11 +165,11 @@ Le site sera multilingue, donc ouvert à l'internationalisation.
 
 \subsection{Vue d'ensemble de la page d'accueil avant le login}
 
-L'utilisateur verra en premier lieu un diaporama mettant en avant certains achievements, classés par date de publication et par popularité, ainsi que les diverses fonctions du site. Ce diaporama aura pour but d'inciter l'utilisateur à procéder à son inscription.\\
+Vous verrez en premier lieu un diaporama mettant en avant certains achievements, classés par date de publication et par popularité, ainsi que les diverses fonctions du site. Ce diaporama a pour but de vous inciter à procéder à son inscription de manière ludique.\\
 
-La page d'accueil permettra également à l'utilisateur de s'inscrire au site. Cette inscription est détaillée plus loin.\\
+La page d'accueil permettra également de s'inscrire au site. Cette inscription est détaillée plus loin.\\
 
-La dernière fonctionnalité principale de cette page d'accueil est la connexion de l'utilisateur au site.\\
+La dernière fonctionnalité principale de cette page d'accueil est vôtre connexion au site.\\
 
 L'entrée du site pourrait éventuellement permettre de rechercher les achievements et catégories de celui-ci.
 
@@ -212,11 +177,12 @@ L'entrée du site pourrait éventuellement permettre de rechercher les achieveme
 
 \subsection{L'inscription, les cinq premières minutes !}
 
-L'objectif de cette étape serait clairement d'éviter toute la lourdeur que représente la récolte d'informations que le site a besoin d'effectuer auprès du futur utilisateur (présenter un formulaire compact et sauvage a des chances de rebuter celui-ci et éventuellement de le faire renoncer à son inscription).\\
+L'objectif de cette étape serait clairement d'éviter toute la lourdeur que représente la récolte d'informations que le site a besoin d'effectuer auprès de vous
+(présenter un formulaire compact et sauvage a des chances de rebuter celui-ci et éventuellement de vous faire renoncer à l'inscription).\\
 
 Nous avons donc pensé à un système en mode pas à pas qui, tout en faisant découvrir notre outil et son univers à l'internaute, effectuerait de subtiles demandes d'informations de façon régulière, et ce afin d'alléger cette étape essentielle qui nous permettra de catégoriser le nouvel inscrit et de lui proposer du contenu en fonction de ces informations qui auront été récoltées.\\
 
-En plus de combiner le rôle de « guide » pour la découverte du site et de « sondeur » pour la récolte d'informations, cette méthode a pour avantage de pousser l'utilisateur à aller au bout de la présentation et donc de l'inscription (il y a là un effet psychologique, il veut finir ce qu'il a commencé ; puisqu'il a déjà commencé à contribuer, autant aller jusqu'au bout). La présentation allant, l'intérêt croissant, les chances d'une inscription réussie augmentent à l'arrivée.\\
+En plus de combiner le rôle de « guide » pour la découverte du site et de « sondeur » pour la récolte d'informations, cette méthode a pour avantage de vous encourager à aller au bout de la présentation et donc de l'inscription (il y a là un effet psychologique, il veut finir ce qu'il a commencé ; puisqu'il a déjà commencé à contribuer, autant aller jusqu'au bout). La présentation allant, l'intérêt croissant, les chances d'une inscription réussie augmentent à l'arrivée.\\
 \\
 
 Dans l'état actuel on imagine comme première approche une question simple qui amène à faire une simple action en mode « vous êtes à un clic de rentrer dans notre univers » avec, par exemple, le choix du genre : Homme, Femme, Non précisé.
@@ -231,7 +197,7 @@ Dans l'état actuel on imagine comme première approche une question simple qui 
 
 La page d'accueil de l'utilisateur habitué au site présente son flux d'informations, à l'image des flux habituels de sites communautaires tels que Facebook ou Google+. \\
 
-Le menu doit être discret. L'utilisateur doit tout de suite voir les quatre onglets principaux :
+Le menu est discret, ce qui vous permet de tout de suite voir les quatre onglets principaux :
 
 \begin{itemize}
 	\item le flux (page d'accueil par défaut) ;
@@ -240,7 +206,7 @@ Le menu doit être discret. L'utilisateur doit tout de suite voir les quatre ong
 	\item les « amis » de l'utilisateur (importés des réseaux sociaux ou ajoutables dans le cadre du site).
 \end{itemize}
 
-Une barre de « breaking news » en permanence en haut du site donnera à l'utilisateur en une ligne les derniers achievements de ses amis ainsi que les nouveautés du site.
+Une barre de « breaking news » en permanence en haut du site vous donnera en une ligne les derniers achievements de vos amis ainsi que les nouveautés du site.
 
 \begin{figure}[H]
 	\begin{center}
@@ -266,7 +232,7 @@ Ce flux contiendra toutes les actions des contacts :
 
 \subsection{Onglet Achievements}
 
-L'utilisateur pourra sélectionner des packs qui contiendront les achievements à accomplir. Les packs seront tous disponibles et classés par thématiques dans une sous-catégorie, mais la plate-forme proposera d'abord à l'utilisateur des packs d'achievements correspondant aux centres d'intérêt de ce dernier, ou encore à sa tranche d'âge. Une fois un pack sélectionné, l'utilisateur peut aussi définir certains achievements comme étant ses objectifs et ainsi notifier son réseau.
+Via cette page, vous pourrez sélectionner des packs qui contiendront les achievements à accomplir. Les packs seront tous disponibles et classés par thématiques dans une sous-catégorie, mais la plate-forme proposera d'abord des packs d'achievements correspondant à vos centres d'intérêt, ou encore à vôtre tranche d'âge. Une fois un pack sélectionné, vous pouvez aussi définir certains achievements comme étant vos objectifs et ainsi notifier vôtre réseau.
 
 \subsection{Détails d'un achievement}
 
