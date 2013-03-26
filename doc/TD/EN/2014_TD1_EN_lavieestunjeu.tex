@@ -1,0 +1,627 @@
+\documentclass{life-fr}
+\usepackage{eurosans}
+\usepackage{totpages}
+
+\begin{document}
+
+\title{Life is A Game}
+\subtitle{Technical Documentation}
+
+\member{Lepage Barbara}{lepage.barbara@gmail.com}
+\member{Caradec Guillaume}{guillaume.caradec@gmail.com }
+\member{Corsin Simon}{simoncorsin@gmail.com }
+\member{Glorieux François}{fra.glorieux@gmail.com}
+\member{Klarman Nicolas}{nickoas@gmail.com}
+\member{Lassagne David}{david.lassagne@gmail.com}
+\member{Louvigny Guillaume}{guillaume@louvigny.fr}
+\member{Le-Cor Wilfried}{wilfried.lecor@gmail.com}
+\member{Lenormand Frank}{lenormf@gmail.com}
+
+
+\summary
+{
+  CONFIDENTIAL summary of the technical components of the project for developers
+}
+
+\maketitle
+
+%% --------------------------------------------------------------------- %%
+
+\chapter*{CONFIDENTIAL}
+{
+  This document is CONFIDENTIAL and internal for the project «~Life Is A Game~».\\
+  \\
+  Without a special agreement, the only persons authorized to read
+  this document are the official members of the current project and the team
+  of professors of the EIP Laboratory (Epitech Innovative Projects) at Epitech.\\
+  \\
+  The only persons authorized to give exceptional permission
+  or share this file are project managers of the project «~Life Is A Game~»
+  
+}
+
+%% --------------------------------------------------------------------- %%
+
+\authorspageen
+
+%% --------------------------------------------------------------------- %%
+
+\chapter*{Abstract}
+{
+  "Life Is A Game" offers mobile and tablets applications, and
+  websites to transform your life into a game in which you
+  challenge yourself with goals and reward badges.\\
+  The "Specifications" document provides all additional information.\\
+  \\
+  Developers are divided into teams within the group.\\
+  We use a number of tools for organizing grouped on
+  \href{http://life.paysdu42.fr/}{a portal}, including agendas
+  weekly meetings, repositoryions and Gitub ``from'' Github to manage
+  tasks.\\
+  \\
+  Development teams correspond to different projects constituting
+  our project: \\
+  \begin{description}
+    \item [respecting a Web service API]: \\
+      This web service is used by mobile clients, tablets, and web
+      External to manipulate the database. It is developed with
+      \textbf{Javascript} \textbf{Node.JS} and \textbf{MongoDB}x.
+    \item [Mobile and Tablets]: \\
+      These applications are available on Android, iOS and Windows Phone
+      through technology \textbf{Mono}.
+    \item [Website]: \\
+      The website can be used on mobile, tablet or ``desktop''. It
+      developed with \textbf{Ocsigen} in \textbf{OCaml}.
+    \item [Documents]: \\
+      Many dot our documentation project, such as
+      documentation called ``global'' (requested by the lab EIP) in
+      \textbf{LaTeX} ``internal'' (corresponding to repositories) in
+      \textbf{Markdown} or ``code'' using the \textbf{Doxygen}.
+  \end{description}
+
+  \vspace{10pt}
+  This documentation is not sufficient to itself alone, developers
+  should take the time to read all the documentation related.
+}
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter*{Document Information}
+
+\rowcolors{1}{white}{lightgray}
+\begin{tabular}{ | m{5cm} | m{10cm} | }
+  \hline
+  \textbf{Document Type} & Technical Documentation \\ % to exchange
+  \hline
+  \textbf{Full title Document} & Technical Documentation «~Life Is A Game~» for new developers \\% to exchange
+  \hline
+  \textbf{Keywords} & «~Technical~», «~Developer~», «~API~» «~lavieestunjeu~» \\% to exchange
+  \hline
+  \textbf{Number of pages} & \ref{TotPages} \\
+  \hline
+  \textbf{Manager} & Group Leader: Barbara Lepage \\
+  \hline
+  \textbf{Group Members} & See cover page \\
+  \hline
+  \textbf{Authors} & Group members, see cover Page \\
+  \hline
+  \textbf{Contact} & lavieestunjeu@googlegroups.com \\
+  \hline
+  \textbf{Current revision} & 1.0 \\% to exchange
+  \hline
+  \textbf{Vitrine website} & \url{http://eip.epitech.eu/2014/lavieestunjeu/} \\
+  \hline
+  \textbf{Official Website} & Not available \\
+  \hline
+\end{tabular}
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter *{Revisions table}
+
+\revision{0.1}{Barbara Lepage}{Layout}{15/03/2013}
+\revision{0.2}{Barbara Lepage}{Introduction}{3/15/2013}
+\revision{0.3}{Barbara Lepage}{Tools and Requirements}{15/03/2013}
+\revision{0.4}{Barbara Lepage}{API}{15/03/2013}
+\revision{0.5}{Barbara Lepage}{Mobile and tablet}{20/03/2013}
+\revision{0.6}{Barbara Lepage}{Website}{20/03/2013}
+\revision{0.7}{Barbara Lepage}{Documentation}{20/03/2013}
+\revision{0.8}{Barbara Lepage}{Conclusion}{3/20/2013}
+\revision{0.9}{Barbara Lepage}{Summary document}{3/20/2013}
+\revision{1.0}{Barbara Lepage}{First version}{3/20/2013}
+\listofrevisions
+
+%% ------------------------------------------------ ---------------------%%
+\newpage
+
+\tableofcontents
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Introduction}
+
+This document is intended for new developers joining the team
+development of the project «~Life Is A Game~».\\
+We assume that readers of this document have already read
+The document ``Specifications'' and programming bases.\\
+\\
+Our application is divided into several components:
+\begin{itemize}
+  \item A public developer API
+  \item Mobile applications and tablets
+  \item A website
+\end{itemize}
+It is not necessary for you to read the entire document
+if you do not participate as a component, but we recommend
+to be in line with the rest of the team and have a global vision
+the project.\\
+\\
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Tools and prerequisites}
+
+\section{Portal}
+
+As we are many developers, we require an organization
+copy to complete our project. To do this, we use portal
+which includes all of our tools.\\
+\\
+The portal is available at the following URL:
+\url{http://life.paysdu42.fr/} \\
+It is necessary for all developers on the team to get to all
+days of work on the project.\\
+\\
+The sources of the portal is available at the following URL:
+\url{https://github.com/LaVieEstUnJeu/Internal-Tools} \\
+More information about repositories in the ``Sources'' projects.
+
+\subsection{Organization}
+
+The tools we use are all on the portal, but go
+far in their use allows more efficiency. We set
+an overview of current tasks in creating new or expanding in
+need deadlines.
+
+\subsubsection{Calendar}
+
+Our agenda is hosted by \textbf{Google Calendar}. It is strongly
+recommended to add in your own calendar. UNIT
+ICAL that Google offers is compatible with most managers
+calendar market.\\
+\\
+We also use a global agenda which corresponds to our
+GANTT.
+
+\subsubsection{Regular Meetings}
+
+We organize regular meetings, including a technical meeting
+a week, a meeting brainstorm inside the application and per week
+meetings monthly or bi-monthly lab organized by the EIP
+(Communication, monitoring, technical defenses, defense communication).\\
+\\
+During the \textbf{weekly technical meeting}, we discuss our
+advancements in the respective project and then we split by
+teams for greater efficiency.
+
+\subsubsection{Communication}
+
+Our \textbf{mailing list} \href{mailto:lavieestunjeu@googlegroups.com}{lavieestunjeu@googlegroups.com}
+is our main communication tool (in French), but
+Regarding the technical side of our project MUST be on
+From GitHub (see below) and written in English.\\
+\\
+We also communicate regularly GTalk, IRC, phone
+and Google Hangout.
+
+\subsubsection{Server Development}
+
+As some technologies that we use, particularly Ocsigen do
+are not portable and are very difficult to install, we use
+common development server on which are installed
+software and libraries necessary for developers.
+
+\section{Sources of the projects}
+
+\subsection{Git}
+
+All our projects are versioned using the release manager
+\textbf{Git}.\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/Gestion_de_versions}{Wikipedia page
+version management}
+and \href{http://git-scm.com/}{official website Git}.
+
+\subsection{GitHub}
+
+The host of our Git repositories called \textbf{GitHub}. This service
+offers free public repositories and private repositories paying
+as well as many other features.\\
+\\
+The main features that we use are:
+\begin{description}
+  \item [Organizations]: \\
+    The ``organisms'' GitHub repositories are used to group
+    on the same page and manage teams.\\
+    Our ``organization'': \url{https://github.com/LaVieEstUnJeu}.
+  \item [Issues]: \\
+    The ``issues'' can be compared to ``tickets''. They allow
+    to identify and discuss the features under development,
+    bugs, ask questions, suggest new features
+    or manage ``pull-request'' (addition of external requests
+    changes to the main repository).\\
+\end{description}
+
+\subsection{Access to repositories}
+
+The majority of our repositories is private. To access them, you must be a member
+team development project.\\
+\\
+If you are not yet a member teams allowing you to have access
+repositories, apply as soon as possible.\\
+Meanwhile, in order to allow new developers who have not yet
+access to our repositories (and lab EIP) to browse the contents of our repositories,
+we create a user account \textbf{lavieestunjeu-watcher}. The
+password for this account is ``2h\&1H52Z''.\\
+\\
+The current teams are:
+\begin{description}
+  \item [Watchers]: \\
+    People outside the project with special permission
+    for \textbf{see} some repositories (eg in the context of jury
+    EIP official advisers, lab EIP).
+  \item [Web Service API]: \\
+    Developers of Web Service API compliance.
+  \item [Mobile]: \\
+    Developers of mobile applications and tablets.
+  \item [Website]: \\
+    Developer Web Client.
+\end{description}
+
+\subsection{Repositories Terms of Use}
+
+\subsubsection{General Rules}
+
+\begin{itemize}
+  \item The contents of private repositories is confidential and must not
+    not be released.
+  \item The content of public repositories are protected by their licenses
+    respective open-source, directly present in the repositories.
+  \item To facilitate the integration of new members of nationalities
+    different, we use the \textbf{English} on these repositories.\\
+    No word French or another language is not tolerated, either
+    the sources in the ``issues'' or ``commit messages.''
+  \item Each repository and each sub-project in the repositories should contain
+    a \textbf{README}. See section ``Documentation'' for
+    more information.
+\end{itemize}
+
+\subsubsection{``Commit''}
+
+\begin{itemize}
+  \item commits responding to an ``issue'' after the name with a ``\#''
+  \item commit messages should always be explicit
+  \item It is recommended to segment the commit messages with a
+    summary of less than 50 letters followed by two newlines
+    and a complete description (usually a list)
+  \item A commit must contain one and only one feature
+  \item If the repositories contain several projects
+    it is imperative to put a ``tag'' at the beginning of the commit message \\
+    Example: ``[Portal] Add labels and sub-labels in the menu''
+  \item ``diff'' commit should never contain lines
+    off-topic.
+\end{itemize}
+
+\subsubsection{``Issues''}
+
+\begin{itemize}
+  \item There must always be an ``open'' outcome for each task in
+  \item ``The issues contain tags'':
+    \begin{itemize}
+      \item task
+      \item bug
+      \item bonus
+      \item issue
+    \end{itemize}
+    \item We do not use issues in public repositories
+\end{itemize}
+
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Developer API Public}
+
+\section{API}
+
+The interraction between the data and we handle our services is
+strictly defined by an API.
+
+\subsection{Specifications}
+
+\subsubsection{REST Architecture}
+
+This API uses the standardized architectural style \textbf{REST}
+(``Representational State Transfer'').\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/Representational_State_Transfer}{Wikipedia page}.
+
+\subsubsection{Formatting JSON}
+
+Data published by the API are formatted using the format
+standardized data \textbf{JSON} (JavaScript Object Notation).\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://www.json.org/}{official website}.
+
+\subsection{API Documentation}
+
+Our API is constantly evolving, unlike this documentation is
+why it is not directly transferred to it.\\
+\\
+It is available on Google Docs: \url{http://goo.gl/uxMoJ}.\\
+When our service is published, the API will be available on our website
+Web
+
+\section{The Web Service}
+
+We offer our users a web service API respecting their
+to manipulate data services. Our customers and web
+mobile are also based on Web Service for handling
+data.\\
+\\
+For more information on what a Web service, many
+references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/Service_Web}{Wikipedia page}.
+
+\subsection{Sources}
+
+\subsubsection{Programming Languages}
+
+Our Web Service is implemented in \textbf{Javascript}
+the framework \textbf{Node.js}.\\
+\\
+The choice of this technology is detailed in the specifications.\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/JavaScript}{Javascript Wikipedia page}
+and \href{http://nodejs.org/}{official website Node.js}.
+
+\subsubsection{Repositories}
+
+The GitHub repository of Web Service \url{https://github.com/LaVieEstUnJeu/API} \\
+It is important to take familiarized the information provided in the
+``README''.\\
+More information about repositories in the ``Sources'' projects.
+
+\subsection{Database}
+
+We use a database called ``no'' relational called MongoDB. \\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/NoSQL}{Wikipedia page and NOSQL}
+\href{http://www.mongodb.org/}{official website MongoDB}.\\
+\\
+The database evolves over the progress of the project and we
+API Modified regularly throughout the development phase.\\
+\\
+Conceptual design of the database is available in the document
+architecture project: \url{https://github.com/LaVieEstUnJeu/Doc/tree/master/doc/AA} \\
+\\
+The current version - but not final - the database is MongoDB
+available on the repository:
+\url{https://github.com/LaVieEstUnJeu/API/blob/master/public/models.js}.
+
+\section{Using the Web Service}
+
+Our Web Service is used by our customers and web and mobile
+potentially by other developers in the future. For this reason,
+we decided to publish the source code using the API
+then subsequently propose other examples so that users
+be guided at best.\\
+\\
+The repository \textbf{public using the API}:
+\url{https://github.com/LaVieEstUnJeu/Public-API/} \\
+It is important to take familiarized the information provided in the
+``README'' and ``all other README'' available examples for each entry
+provided.\\
+More information about repositories in the ``Sources'' projects.\\
+\\
+The source code for these examples is available ONLY on the repository to
+not to dupplication. For this reason, using the repositories
+code should be calling upon installation.
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Tablets and Mobile Applications}
+
+\section{Sockets and technology}
+
+Our apps are available on mobiles and tablets, several
+Operating Systems\\
+\\
+To minimize the amount of code generated and thus limit the
+amount of potential bugs, we use technology \textbf{Mono}
+C\#.\\
+In particular, we use:
+\begin{itemize}
+  \item Native code C\# to \textbf{Windows Phone 7}
+  \item Mono.android for \textbf{Android}
+  \item MonoTouch for \textbf{iOs}
+\end{itemize}
+
+The choice of this technology is detailed in the specifications.\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://msdn.microsoft.com/en-us/vstudio/hh341490.aspx}{documentation
+Official C\#} and \href{http://www.mono-project.com/}{official website Mono}.
+
+\section{Source}
+
+\subsection{Repositories}
+
+The GitHub repository applications:
+\url{https://github.com/LaVieEstUnJeu/Applications} \\
+More information about repositories in the ``Sources'' projects.
+
+\subsection{Unit Tests API}
+
+Applications filing also proposes to implement unit tests
+client-side API.
+
+\section{Design}
+
+The design of the views and the description of the features thereof
+defined in this document are CONFIDENTIAL:
+\url{http://goo.gl/oY9se}
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Website}
+
+\section{Technology}
+
+The website is developed with \textbf{Ocsigen}, server and web framework
+in \textbf{OCaml}.\\
+\\
+The choice of this technology is detailed in the specifications.\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://ocaml.org/}{official website OCaml} and
+\href{http://ocsigen.org/}{official website Ocsigen}.\\
+\\
+Client code and server code are developed
+with the same technology. The views are responsives, ie
+the display is automatically adapted to display on
+said ``desktop environment'', ``mobile'' or ``tablets''.
+
+\section{Repositories}
+
+The GitHub repository website:
+\url{https://github.com/LaVieEstUnJeu/Website} \\
+It is important to take familiarized the information provided in the
+``README''.\\
+More information about repositories in the ``Sources'' projects.
+
+\section{URLs}
+
+URLs are defined on the ``README'':
+\url{https://github.com/LaVieEstUnJeu/Website}
+
+\section{Views Design}
+
+The design of the views defined in this album CONFIDENTIAL:
+\href{http://photos.db0.fr/?album=GLifeDesign?authkey=Gv1sRgCLmfvp7DmMK_hAE}{album}.
+
+\section{Features}
+
+The description of the features on the views defined in the ``specifications''.
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Documentation}
+
+This chapter is intended for technical writers project.\\
+In the section ``code'' is open to all developers.
+
+\section{Overall project documentation}
+
+\subsection{Sources}
+
+The GitHub repository overall project documentation:
+\url{https://github.com/LaVieEstUnJeu/Applications} \\
+It is important to take familiarized the information provided in the
+``README''.\\
+More information about repositories in the ``Sources'' projects.
+
+\subsection{Steps and technologies}
+
+We document our projects according to the wishes of the lab and add EIP
+also other documentation we deem useful.
+
+\subsubsection{Writing}
+
+If necessary, we write the content of our documents using a
+collaborative tools (Google Docs / Drive) allowing us to
+work and more distance.\\
+\\
+If only one person working on the document, it is not
+necessary to use this tool and we directly use the
+layout tools.
+
+\subsubsection{Layout}
+
+We set our page documents using \textbf{LaTeX}
+a markup language.\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/Langage_de_balisage}{the Wikipedia page} and
+\href{http://www.latex-project.org/}{official website LaTeX}.
+
+\section{Documentation directly related to repositories}
+
+Each repository and each sub-project in the repositories should contain
+documentation in README ``file''.
+
+\subsection{Content}
+
+This file should contain:
+\begin{itemize}
+  \item content, the purpose of repository / project
+  \item The project dependencies
+  \item A simple and quick to install, compile, run, test
+  \item The tree and the location of the main
+  \item An explanation for people who join the project
+  \item ``coding-style'' (or coding convention) Project
+  \item A FAQ
+  \item The copyright (for repositories open-source)
+\end{itemize}
+
+\subsection{Sources}
+
+These documents must be written using the language
+markup \textbf{Markdown} (recommended) or another
+language supported by GitHub.\\
+\\
+The list of languages supported by GitHub and links to
+their documentation are available on
+\href{https://github.com/github/markup#markups}{GitHub documentation}.
+
+\section{In the code}
+
+It is important to comment your code and documenting best.
+To do this, keep in mind that other people will need
+ironing behind to read, understand and modify, and they
+must do so without difficulty and without the help of developers
+Original\\
+\\
+We generally recommend using the syntax \textbf{Doxygen}
+to automatically generate documentation, but each project
+has its own coding conventions defined in the ``README''.\\
+\\
+Many references exist on the Internet for these notions, including
+\href{http://fr.wikipedia.org/wiki/R%C3%A8gles_de_codage}{Wikipedia page
+coding conventions} and \href{http://www.doxygen.org/}{official website Doxygen}.
+
+%% ------------------------------------------------ ---------------------%%
+
+\chapter{Go further}
+
+This document is a simple guide for new developers
+join the project without difficulty, but it is not him
+only complete documentation.\\
+\\
+It is therefore essential that as developers, you take the time
+to read about the projects you are working on using
+the links in this document and doing your own research.\\
+\\
+It is also important for the cohesion of the group to communicate
+within teams. For this, participation in meetings is mandatory
+and can ask questions or answer.\\
+\\
+Finally, it is important that you take the time, as did
+and make the team, write documentation for your projects
+respective and holding them up to date.
+
+\end{document}
