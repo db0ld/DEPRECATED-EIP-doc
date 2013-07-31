@@ -68,12 +68,12 @@ on GitHub](https://github.com/LaVieEstUnJeu/)
 We have a bunch of other documents and ressources [in the Google Drive](http://goo.gl/RJWuc),
 such as the logos, screenshots and other ressources.
 
-***
-
 ## Deprecated documents
 
 Lots of documents we wrote were homeworks required by the LabEIP for Epitech.
 Since we're not updating them, most of them are __deprecated__.
+
+__DON'T USE THEM.__
 
 ###### For non-developpers
 
