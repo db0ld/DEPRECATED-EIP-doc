@@ -70,12 +70,6 @@ such as the logos, screenshots and other ressources.
 
 ***
 
-***
-
-***
-
-***
-
 ## Deprecated documents
 
 Lots of documents we wrote were homeworks required by the LabEIP for Epitech.
