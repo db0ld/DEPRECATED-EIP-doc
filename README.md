@@ -1,7 +1,7 @@
 Documents
 =========
 
-##### Documents types
+## Documents types
 
 Our documents are stored in different formats:
 
@@ -25,7 +25,9 @@ directly in the Github repositories, in the README files.
 
 Some documentation are automatically generated from the comments in the code.
 
-#### General
+## Documents
+
+### General
 
 * [EN] [General F.A.Q. of the project](http://glife.fr/F.A.Q.)
 
@@ -39,11 +41,11 @@ These documents can be used to communicate about the project.
 * [EN] [Showcase website](http://life.db0.fr/)
 * [FR] [Showcase website](http://life.db0.fr/?lang_fr)
 
-#### Business
+### Business
 
 All the documentation about business are currently outdated.
 
-#### Developer
+### Developer
 
 * [EN] [__TD__ is the technical documentation, an overview of the project for new developers](https://github.com/LaVieEstUnJeu/Doc/raw/master/TD/EN/2014_TD1_EN_lavieestunjeu.pdf)
 * [FR] [__TD__ is the technical documentation, an overview of the project for new developers](https://github.com/LaVieEstUnJeu/Doc/raw/master/TD/FR/2014_TD1_FR_lavieestunjeu.pdf)
@@ -53,15 +55,15 @@ All the documentation about business are currently outdated.
 * [EN] [Documentation specific to a component of the project (Website, applications, API, ...)
 on GitHub](https://github.com/LaVieEstUnJeu/)
 
-* [EN] API webservice generated documentation __work in progress_
+* [EN] API webservice generated documentation _work in progress_
 * [EN] [OCaml API library generated documentation](http://life.db0.fr/api/OCaml/)
 
-#### For Epitech students
+### For Epitech students
 
 * __Follow-ups__ [Monthly follow-up with the LabEIP](http://goo.gl/ARyLT)
 * __Slides__ [of the presentations we gave](http://goo.gl/xB5Cq)
 
-#### More
+### More
 
 We have a bunch of other documents and ressources [in the Google Drive](http://goo.gl/RJWuc),
 such as the logos, screenshots and other ressources.
@@ -74,7 +76,7 @@ such as the logos, screenshots and other ressources.
 
 ***
 
-#### Deprecated documents
+## Deprecated documents
 
 Lots of documents we wrote were homeworks required by the LabEIP for Epitech.
 Since we're not updating them, most of them are __deprecated__.
