@@ -33,13 +33,9 @@ Some documentation are automatically generated from the comments in the code.
 
 ### Communication
 
-These documents can be used to communicate about the project.
+The texts and medias in this Google Drive folder can be used to communicate about the project:
 
-* [FR] [50 words](https://github.com/LaVieEstUnJeu/Doc/blob/master/com/50_mots.txt)
-* [FR] [150 words](https://github.com/LaVieEstUnJeu/Doc/blob/master/com/150_mots.txt)
-
-* [EN] [Showcase website](http://life.db0.fr/)
-* [FR] [Showcase website](http://life.db0.fr/?lang_fr)
+http://goo.gl/61ojNi
 
 ### Business
 
