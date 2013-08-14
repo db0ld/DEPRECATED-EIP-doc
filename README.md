@@ -7,7 +7,7 @@ Our documents are stored in different formats:
 
 ###### PDF documents generated from LaTeX
 
-These documents are in [the Doc repository](https://github.com/LaVieEstUnJeu/Doc).
+These documents are in [the Doc repository](https://github.com/Life-the-game/Doc).
 If you need to compile them, just type `make` on the server, and it's going to
 use the template.
 
@@ -43,13 +43,13 @@ All the documentation about business are currently outdated.
 
 ### Developer
 
-* [EN] [__TD__ is the technical documentation, an overview of the project for new developers](https://github.com/LaVieEstUnJeu/Doc/raw/master/TD/EN/2014_TD1_EN_lavieestunjeu.pdf)
-* [FR] [__TD__ is the technical documentation, an overview of the project for new developers](https://github.com/LaVieEstUnJeu/Doc/raw/master/TD/FR/2014_TD1_FR_lavieestunjeu.pdf)
+* [EN] [__TD__ is the technical documentation, an overview of the project for new developers](https://github.com/Life-the-game/Doc/raw/master/TD/EN/2014_TD1_EN_lavieestunjeu.pdf)
+* [FR] [__TD__ is the technical documentation, an overview of the project for new developers](https://github.com/Life-the-game/Doc/raw/master/TD/FR/2014_TD1_FR_lavieestunjeu.pdf)
 
 * [EN] [__API__ the full documentation of our API](http://goo.gl/uxMoJ) _work in progress_
 
 * [EN] [Documentation specific to a component of the project (Website, applications, API, ...)
-on GitHub](https://github.com/LaVieEstUnJeu/)
+on GitHub](https://github.com/Life-the-game/)
 
 * [EN] API webservice generated documentation _work in progress_
 * [EN] [OCaml API library generated documentation](http://life.db0.fr/api/OCaml/)
