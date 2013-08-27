@@ -3,7 +3,7 @@ Documents
 
 ### General
 
-* [EN] [General F.A.Q. of the project](http://glife.fr/F.A.Q.)
+* [EN] [General F.A.Q. of the project](http://portal.life.tl/F.A.Q.)
 
 ### Communication
 
@@ -13,19 +13,19 @@ http://goo.gl/61ojNi
 
 ### Business
 
-All the documentation about business are currently outdated.
+Business & Marketing documents: http://goo.gl/buJNAo
 
 ### Developer
 
-* Read [the F.A.Q. for developers](http://glife.fr/F.A.Q.)
+* Read [the F.A.Q.](http://portal.life.tl/F.A.Q.)
 
-* [EN] [__API__ the full documentation of our API](http://goo.gl/uxMoJ) _work in progress_
+* [EN] [__API__ the full documentation of our API](http://doc.life.tl/api/) _work in progress_
 
 * [EN] [Documentation specific to a component of the project (Website, applications, API, ...)
 on GitHub](https://github.com/Life-the-game/)
 
 * [EN] API webservice generated documentation _work in progress_
-* [EN] [OCaml API library generated documentation](http://life.db0.fr/api/OCaml/)
+* [EN] [OCaml API library generated documentation](http://doc.life.tl/api/OCaml)
 
 ### For Epitech students
 
